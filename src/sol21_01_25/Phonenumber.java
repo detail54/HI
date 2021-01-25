@@ -10,9 +10,10 @@ class PhoneNum {
 		name = n;
 		phone = p;
 	}
+
 	void show() {
-		System.out.println("이름: " + name);
-		System.out.println("번호: " + phone);
+		System.out.println("이름 " + name);
+		System.out.println("번호 " + phone); 
 	}
 }
 
@@ -21,11 +22,12 @@ class School extends PhoneNum {
 
 	School(String n, String p, String m) {
 		super(n, p);
-		major = m;
+		this.major = m;
 	}
-	void show() { // 오버라이딩
+
+	void show() {
 		super.show();
-		System.out.println("전공: " + major);
+		System.out.println("전공 " + major);
 	}
 }
 
@@ -36,43 +38,42 @@ class Worker extends PhoneNum {
 		super(n, p);
 		this.grade = g;
 	}
+
 	void show() {
 		super.show();
-		System.out.println("직급: " + grade);
+		System.out.println("부서 " + grade);
 	}
-
 }
 
 class Arr {
 	PhoneNum[] ary;
 	int n;
 
-	Arr(int n) { // 생성자안에
-		ary = new PhoneNum[n]; // 배열 생성코드
-		n = 0;
-	}
-	void add(PhoneNum p) {
-		ary[n++] = p; // 친구 추가
-	}
-	void frined(char ch) {
-		Scanner s = new Scanner(System.in);
+	Arr(int n) {	// school과 worker 를 구분해서 입력 받을건데 그러기 위해서는 school과 worker의 기능을 모두 사용해야함. 그래서 그2가지의 상위 클래스인 PhoneNum을 불러옴.
+		ary = new PhoneNum[n];
+	} 
 
-		System.out.print("이름 : ");
-		String name = s.next();
-		System.out.print("번호 : ");
-		String num = s.next();
+	void add(PhoneNum p) {
+		ary[n++] = p;
+	}
+
+	void frined(char ch) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("이름: ");
+		String name = sc.next();
+		System.out.print("번호: ");
+		String num = sc.next();
 
 		switch (ch) {
 		case 'A':
 			System.out.print("전공: ");
-			String major = s.next();
-			// PhoneNum p = new School(name,num,major);
+			String major = sc.next();
 			add(new School(name, num, major));
 			break;
 		case 'B':
-			System.out.print("직급: ");
-			String grade = s.next();
-			// PhoneNum p = new School(name,num,major);
+			System.out.print("부서: ");
+			String grade = sc.next();
 			add(new Worker(name, num, grade));
 			break;
 		}
@@ -88,33 +89,37 @@ class Arr {
 public class Phonenumber {
 
 	public static void main(String[] args) {
-
-		Arr ar = new Arr(5);
-
+		
+		Arr ar = new Arr(3);
+		
 		while (true) {
 			System.out.println("A.학교 친구 정보");
 			System.out.println("B.직장 동료 정보");
 			System.out.println("C.종료");
 			System.out.println("D.출력");
-			System.out.println("문자 입력");
-
-			Scanner s = new Scanner(System.in);
-
-			char c = s.next().charAt(0);
-
-			switch (c) {
+			
+			Scanner sc = new Scanner(System.in);
+			
+			char c = sc.next().charAt(0);
+			
+			switch(c) {
 			case 'A':
 				ar.frined(c);
 				break;
 			case 'B':
 				ar.frined(c);
 				break;
-			case 'C':
+			case 'C' :
 				System.out.println("종료");
 				return;
-			case 'D':
+			case 'D' : 
 				ar.all();
+				
 			}
+			
 		}
+		
+		
 	}
+
 }
