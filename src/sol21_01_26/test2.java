@@ -9,6 +9,12 @@ class Circle{
 	public String toString() {
 		return a+" ";
 	}
+	public boolean equals(Object ob) {
+		if(this.a == ((Circle)ob).a) {
+			return true;
+		}
+		return false;
+	}
 }
 
 public class test2 {
@@ -17,13 +23,13 @@ public class test2 {
 		Circle a = new Circle(30);
 		Circle b = new Circle(30);
 
-		System.out.println("¹İÁö¸§" + a);
-		System.out.println("¹İÁö¸§" + b);
+		System.out.println("ë°˜ì§€ë¦„" + a);
+		System.out.println("ë°˜ì§€ë¦„" + b);
 
 		if (a.equals(b)) {
-			System.out.println("°°Àº ¿ø");
+			System.out.println("ê°™ì€ ì›");
 		} else {
-			System.out.println("´Ù¸¥ ¿ø");
+			System.out.println("ë‹¤ë¥¸ ì›");
 		}
 	}
 
