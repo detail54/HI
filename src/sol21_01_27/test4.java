@@ -29,11 +29,13 @@ public class test4 {
 
 		try {
 			ObjectOutputStream oi = new ObjectOutputStream(new FileOutputStream("a.txt"));
+			oi.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		try {
 			ObjectInputStream oi = new ObjectInputStream(new FileInputStream("a.txt"));
+			oi.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
