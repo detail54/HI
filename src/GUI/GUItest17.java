@@ -42,7 +42,7 @@ public class GUItest17 extends JFrame {
 			if (e.getItem() == j1) {
 				System.out.println("Â¥Àå¸é");
 			} else if (e.getItem() == j2) {
-				getContentPane().setBackground(Color.pink);
+				getContentPane().setBackground(Color.pink);	
 			}
 		}
 	}
