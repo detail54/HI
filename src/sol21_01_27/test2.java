@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,14 +22,14 @@ public class test2 extends JFrame {
 		JButton j1 = new JButton("Ok");
 		JButton j2 = new JButton("Cancel");
 		JButton j3 = new JButton("Get");
-		
+
 		j1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				c.setBackground(Color.orange);
 			}
 		});
 		c.add(j3);
-		
+
 		j2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				j2.setEnabled(false);
@@ -39,7 +40,7 @@ public class test2 extends JFrame {
 				System.out.println(j3.getX() + " " + j3.getY());
 			}
 		});
-		
+
 		setVisible(true);
 
 	}
@@ -50,7 +51,7 @@ public class test2 extends JFrame {
 //		2.1Ok 버튼을 누르면 컨텐트팬 색을 orange, Cancel 버튼을 누르면 버튼을 비활성화시키고 Get 버튼을 누르면 버튼의 위치(x,y)값을 출력해라.
 
 		new test2();
-		
+
 	}
 
 }
