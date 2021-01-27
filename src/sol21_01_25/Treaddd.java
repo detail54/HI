@@ -1,9 +1,9 @@
 package sol21_01_25;
 
-class Th implements Runnable {
+class Thh implements Runnable {
 	String a;
 
-	Th(String a) {
+	Thh(String a) {
 		this.a = a;
 	}
 
@@ -22,7 +22,7 @@ class Th implements Runnable {
 public class Treaddd {
 	public static void main(String[] args) {
 
-		Th t = new Th("쓰레드");
+		Thh t = new Thh("쓰레드");
 		Thread t1 = new Thread(t);
 		t1.start(); // run 메소드 실행
 
