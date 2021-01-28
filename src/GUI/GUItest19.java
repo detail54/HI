@@ -28,7 +28,7 @@ public class GUItest19 extends JFrame {
 
 		j.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				j1.append(j.getText());
+				j1.append(j.getText()+"\n");
 				j.setText("");
 			}
 		});
@@ -38,7 +38,7 @@ public class GUItest19 extends JFrame {
 
 	public static void main(String[] args) {
 
-		new GUItest20();
+		new GUItest19();
 
 	}
 
