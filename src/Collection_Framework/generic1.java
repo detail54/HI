@@ -1,5 +1,7 @@
 package Collection_Framework;
 
+//제너릭 클래스
+
 class Java {
 	String title;
 

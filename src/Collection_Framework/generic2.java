@@ -1,7 +1,9 @@
 package Collection_Framework;
 
+//제너릭 메소드
+
 class AA {
-	public String toString() {
+	public String toString() {	//객체출력 할땐 toString 함수 넣어야함.	
 		return "AA";
 	}
 }
