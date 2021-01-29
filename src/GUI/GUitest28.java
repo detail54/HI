@@ -31,7 +31,7 @@ public class GUitest28 extends JFrame {
 			int a = (int) (Math.random() * 256);
 			int b = (int) (Math.random() * 256);
 			int c = (int) (Math.random() * 256);
-
+					//getKeycode 는 인트값.  ex) e.getKeyCode()==keyEvent.VK_up; 게임 짤때 방향키 이동 이렇게.
 			switch (e.getKeyChar()) {
 				//엔터입력시.,			//VK_LEFT 방향키 왼쪽.   VK_는 키보드
 			case '\n':
