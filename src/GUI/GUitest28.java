@@ -33,7 +33,7 @@ public class GUitest28 extends JFrame {
 			int c = (int) (Math.random() * 256);
 
 			switch (e.getKeyChar()) {
-
+				//엔터입력시.,			//VK_LEFT 방향키 왼쪽.   VK_는 키보드
 			case '\n':
 				j.setText(a + " " + b + " " + c);
 				getContentPane().setBackground(new Color(a,b,c));
