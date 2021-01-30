@@ -14,15 +14,6 @@ public class Main extends JFrame{
 		Container c = getContentPane();
 		c.setLayout(null);
 		
-		JButton jb_Start = new JButton();
-		c.add(jb_Start);
-		
-		JLabel saleList = new JLabel();
-		c.add(saleList);
-		saleList.setBounds(getBounds());
-		
-		setSize(1400,600);
-		setVisible(true);
 		
 	}
 	
