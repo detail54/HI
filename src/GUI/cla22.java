@@ -116,7 +116,7 @@ public class cla22 extends JFrame {
 	public class Result implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String get = jl1.getText();
-			double result = Calculator(get);
+			double result = Ca(get);
 
 			if (result < 0) {
 				jl1.setText(Double.toString(result));
@@ -128,9 +128,9 @@ public class cla22 extends JFrame {
 		}
 	}
 
-	public double Calculator(String ss) {
+	public double Ca(String ss) {
 		int i;
-		double ans;
+		double d;
 		in = 0;
 		ArrayList<Double> v = new ArrayList<Double>();
 		ArrayList<String> op = new ArrayList<String>();
@@ -175,18 +175,18 @@ public class cla22 extends JFrame {
 				}
 			}
 
-			ans = v.get(0);
+			d = v.get(0);
 			for (i = 1; i < v.size(); i++) {
 				String s = op.get(i);
 				double n = v.get(i);
 
 				if (s.compareTo("+") == 0)
-					ans = ans + n;
+					d += n;
 				else if (s.compareTo("-") == 0)
-					ans = ans - n;
+					d -=n;
 			}
 
-			return ans;
+			return d;
 		}
 
 		return 0;
