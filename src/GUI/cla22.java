@@ -34,12 +34,6 @@ public class cla22 extends JFrame {
 		jl1.setForeground(Color.white);
 		jl1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 40));
 		jl1.setHorizontalAlignment(SwingConstants.RIGHT);
-		if ((jl1.getText()).length() >= 16) {
-			jl1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 25));
-		}
-		if ((jl1.getText()).length() >= 23) {
-			jl1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
-		}
 
 		jl2 = new JLabel(""); // ÀÌÀü °á°ú°ª ÀúÀå.
 		jl2.setBackground(Color.BLACK);
@@ -113,6 +107,7 @@ public class cla22 extends JFrame {
 		setVisible(true);
 
 	}
+
 	public class Result implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String get = jl1.getText();
@@ -120,11 +115,15 @@ public class cla22 extends JFrame {
 
 			if (result < 0) {
 				jl1.setText(Double.toString(result));
+				jl2.setText(Double.toString(result));
 				ch = 1;
 			} else if (result >= 10000000) {
 				jl1.setText("0.0");
-			} else
+				jl2.setText("0.0");
+			} else {
 				jl1.setText(Double.toString(result));
+				jl2.setText(Double.toString(result));
+			}
 		}
 	}
 
@@ -183,7 +182,7 @@ public class cla22 extends JFrame {
 				if (s.compareTo("+") == 0)
 					d += n;
 				else if (s.compareTo("-") == 0)
-					d -=n;
+					d -= n;
 			}
 
 			return d;
