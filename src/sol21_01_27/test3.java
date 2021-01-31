@@ -14,57 +14,44 @@ import javax.swing.JFrame;
 
 class Ggg implements MouseListener {
 
-	JButton j = new JButton();
-	
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		JButton j = (JButton) e.getSource();
 		if (j.getText().equals("Ok")) {
-			j.addMouseListener(new MouseAdapter() {
-				public void mouseClicked(MouseEvent e) {
-					
-				}
-			});
-		} else if(j.getText().equals("cancel")) {
-			j.addMouseListener(new MouseAdapter() {
-				public void mouseClicked(MouseEvent e) {
-					
-				}
-			});
-		} else if(j.getText().equals("Get")) {
-			j.addMouseListener(new MouseAdapter() {
-				public void mouseClicked(MouseEvent e) {
-					System.out.println(j.getX()+ " " +j.getY());
-				}
-			});
+			j.setBackground(Color.orange);
+		} else if (j.getText().equals("cancel")) {
+			j.setEnabled(false);
+		} else if (j.getText().equals("Get")) {
+			System.out.println(j.getX() + " " + j.getY());
+
 		}
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		
+
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		
+
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		
+
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		
+
 	}
 }
 
 public class test3 extends JFrame {
 
-	
+	test3() {
 
-		test3() {
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		c.setBackground(Color.blue);
@@ -73,23 +60,13 @@ public class test3 extends JFrame {
 		JButton j2 = new JButton("Cancel");
 		JButton j3 = new JButton("Get");
 
-		j1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				c.setBackground(Color.orange);
-			}
-		});
-		c.add(j3);
-
-		j2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				j2.setEnabled(false);
-			}
-		});
-		j3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println(j3.getX() + " " + j3.getY());
-			}
-		});
+		Ggg g = new Ggg();
+		j1.addMouseListener(g);
+		j2.addMouseListener(g);
+		j3.addMouseListener(g);
+		add(j1);
+		add(j2);
+		add(j3);
 
 		setVisible(true);
 
