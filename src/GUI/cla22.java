@@ -33,13 +33,13 @@ public class cla22 extends JFrame {
 		jl1.setBackground(Color.BLACK);
 		jl1.setForeground(Color.white);
 		jl1.setFont(new Font("나눔고딕 보통", Font.BOLD, 40));
-		jl1.setHorizontalAlignment(SwingConstants.RIGHT);
+		jl1.setHorizontalAlignment(JLabel.RIGHT);
 
 		jl2 = new JLabel(""); // 이전 결과값 저장.
 		jl2.setBackground(Color.BLACK);
 		jl2.setForeground(Color.white);
 		jl2.setFont(new Font("나눔고딕 보통", Font.BOLD, 40));
-		jl2.setHorizontalAlignment(SwingConstants.RIGHT);
+		jl2.setHorizontalAlignment(JLabel.RIGHT);
 
 		JPanel jp1 = new JPanel();
 		jp1.setLayout(new GridLayout(2, 1));
