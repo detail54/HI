@@ -18,8 +18,8 @@ import javax.swing.SwingConstants;
 
 public class cla22 extends JFrame {
 
-	static int check;
-	static int flag;
+	static int in;
+	static int ch;
 	static JLabel jl1;
 	static JLabel jl2;
 
@@ -120,7 +120,7 @@ public class cla22 extends JFrame {
 
 			if (result < 0) {
 				jl1.setText(Double.toString(result));
-				flag = 1;
+				ch = 1;
 			} else if (result >= 10000000) {
 				jl1.setText("0.0");
 			} else
@@ -131,7 +131,7 @@ public class cla22 extends JFrame {
 	public double Calculator(String ss) {
 		int i;
 		double ans;
-		check = 0;
+		in = 0;
 		ArrayList<Double> v = new ArrayList<Double>();
 		ArrayList<String> op = new ArrayList<String>();
 
@@ -153,15 +153,7 @@ public class cla22 extends JFrame {
 				str = "";
 			}
 		}
-
-		for (i = 0; i < v.size(); i++) {
-			if (v.get(i) >= 10000000) {
-				check = 1;
-				break;
-			}
-		}
-
-		if (check == 0) {
+		if (in == 0) {
 			for (i = 1; i < v.size(); i++) {
 				String s = op.get(i);
 				double tmp;
