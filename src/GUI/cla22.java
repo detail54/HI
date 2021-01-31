@@ -23,7 +23,7 @@ public class cla22 extends JFrame {
 		c.setLayout(new BorderLayout(5,5));
 		c.setBackground(Color.BLACK);
 		
-		JLabel jl1 = new JLabel("01123123123123121231232322");
+		JLabel jl1 = new JLabel("0");
 		jl1.setBackground(Color.BLACK);
 		jl1.setForeground(Color.white);
 		jl1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 40));
@@ -35,11 +35,12 @@ public class cla22 extends JFrame {
 			jl1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
 		}
 		
-		JLabel jl2 = new JLabel("0");
+		JLabel jl2 = new JLabel("");	//ÀÌÀü °á°ú°ª ÀúÀå.
 		jl2.setBackground(Color.BLACK);
 		jl2.setForeground(Color.white);
 		jl2.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 40));
 		jl2.setHorizontalAlignment(SwingConstants.RIGHT);
+		
 		
 		JPanel jp1 = new JPanel();
 		jp1.setLayout(new GridLayout(2,1));
