@@ -132,10 +132,10 @@ public class cla22 extends JFrame {
 		int i;
 		double d;
 		in = 0;
-		ArrayList<Double> v = new ArrayList<Double>();
-		ArrayList<String> op = new ArrayList<String>();
+		ArrayList<Double> a1 = new ArrayList<Double>();
+		ArrayList<String> a2 = new ArrayList<String>();
 
-		op.add(null);
+		a2.add(null);
 		String str = new String("");
 		for (i = 0; i < ss.length(); i++) {
 			Character c = ss.charAt(i);
@@ -144,41 +144,41 @@ public class cla22 extends JFrame {
 			if (Character.isDigit(c)) {
 				str += Character.toString(c);
 				if (i == ss.length() - 1)
-					v.add(Double.parseDouble(str));
+					a1.add(Double.parseDouble(str));
 			} else if (s.equals("."))
 				str += s;
 			else {
-				v.add(Double.parseDouble(str));
-				op.add(Character.toString(c));
+				a1.add(Double.parseDouble(str));
+				a2.add(Character.toString(c));
 				str = "";
 			}
 		}
 		if (in == 0) {
-			for (i = 1; i < v.size(); i++) {
-				String s = op.get(i);
+			for (i = 1; i < a1.size(); i++) {
+				String s = a2.get(i);
 				double tmp;
 
 				if (s.equals("*")) {
-					tmp = v.get(i - 1) * v.get(i);
-					op.remove(i);
-					v.remove(i);
-					v.remove(i - 1);
-					v.add(i - 1, tmp);
+					tmp = a1.get(i - 1) * a1.get(i);
+					a2.remove(i);
+					a1.remove(i);
+					a1.remove(i - 1);
+					a1.add(i - 1, tmp);
 					i--;
 				} else if (s.equals("/")) {
-					tmp = v.get(i - 1) / v.get(i);
-					op.remove(i);
-					v.remove(i);
-					v.remove(i - 1);
-					v.add(i - 1, tmp);
+					tmp = a1.get(i - 1) / a1.get(i);
+					a2.remove(i);
+					a1.remove(i);
+					a1.remove(i - 1);
+					a1.add(i - 1, tmp);
 					i--;
 				}
 			}
 
-			d = v.get(0);
-			for (i = 1; i < v.size(); i++) {
-				String s = op.get(i);
-				double n = v.get(i);
+			d = a1.get(0);
+			for (i = 1; i < a1.size(); i++) {
+				String s = a2.get(i);
+				double n = a1.get(i);
 
 				if (s.compareTo("+") == 0)
 					d += n;
