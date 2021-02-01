@@ -17,7 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class cla22 extends JFrame {
-
 	static int in;
 	static JLabel jl1;
 	static JLabel jl2;
@@ -27,7 +26,7 @@ public class cla22 extends JFrame {
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout(5, 5));
 		c.setBackground(Color.BLACK);
-
+ 
 		jl1 = new JLabel("");
 		jl1.setBackground(Color.BLACK);
 		jl1.setForeground(Color.white);
@@ -116,8 +115,8 @@ public class cla22 extends JFrame {
 				jl1.setText(Double.toString(result));
 				jl2.setText(Double.toString(result));
 			} else if (result >= 10000000) {
-				jl1.setText("0.0");
-				jl2.setText("0.0");
+				jl1.setText("10000000");
+				jl2.setText("10000000");
 			} else {
 				jl1.setText(Double.toString(result));
 				jl2.setText(Double.toString(result));
@@ -154,7 +153,7 @@ public class cla22 extends JFrame {
 			for (i = 1; i < a1.size(); i++) {
 				String s = a2.get(i);
 				double tmp;
-
+ 
 				if (s.equals("*")) {
 					tmp = a1.get(i - 1) * a1.get(i);
 					a2.remove(i);
