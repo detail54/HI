@@ -16,9 +16,9 @@ class PPRoo implements Comparable<PPRoo> {
 
 	public int compareTo(PPRoo p) {
 		if (len() > p.len()) {
-			return -1;
-		} else if (len() < p.len()) {
 			return 1;
+		} else if (len() < p.len()) {
+			return -1;
 		} else {
 			return 0;
 		}
@@ -40,7 +40,10 @@ public class treeset3 {
 
 		s.add(new PPRoo("ccc"));
 		s.add(new PPRoo("aaaa"));
+		s.add(new PPRoo("bbwwwwwww"));
 		s.add(new PPRoo("bb"));
+		s.add(new PPRoo("bbbbbbb"));
+		
 
 		Iterator<PPRoo> it = s.iterator();
 
