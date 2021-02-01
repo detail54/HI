@@ -30,21 +30,21 @@ public class GUItest31 extends JFrame {
 
 		jb[0].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jl.setText(Integer.toString(Integer.parseInt(jl.getText())+5));
+				jl.setText(Integer.toString(Integer.parseInt(jl.getText()) + 5));
 				jb[0].setEnabled(false);
 			}
 		});
-		
+
 		jb[1].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jl.setText(Integer.toString(Integer.parseInt(jl.getText())-5));
+				jl.setText(Integer.toString(Integer.parseInt(jl.getText()) - 5));
 				jb[1].setEnabled(false);
 			}
 		});
-		
+
 		jb[2].addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jl.setText(Integer.toString(Integer.parseInt(jl.getText())/5));
+				jl.setText(Integer.toString(Integer.parseInt(jl.getText()) / 5));
 				jb[2].setEnabled(false);
 			}
 		});
