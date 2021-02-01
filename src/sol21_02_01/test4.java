@@ -3,6 +3,7 @@ package sol21_02_01;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,7 +15,7 @@ public class test4 extends JFrame {
 	test4() {
 
 		Container c = getContentPane();
-		c.setLayout(new FlowLayout());
+		c.setLayout(new GridLayout());
 
 		Color co[] = { Color.RED, Color.orange, Color.yellow, Color.GREEN, Color.BLUE };
 		JButton[] jb = new JButton[5];
