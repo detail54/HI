@@ -19,7 +19,6 @@ import javax.swing.SwingConstants;
 public class cla22 extends JFrame {
 
 	static int in;
-	static int ch;
 	static JLabel jl1;
 	static JLabel jl2;
 
@@ -116,7 +115,6 @@ public class cla22 extends JFrame {
 			if (result < 0) {
 				jl1.setText(Double.toString(result));
 				jl2.setText(Double.toString(result));
-				ch = 1;
 			} else if (result >= 10000000) {
 				jl1.setText("0.0");
 				jl2.setText("0.0");
