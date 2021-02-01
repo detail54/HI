@@ -74,7 +74,7 @@ public class cla22 extends JFrame {
 						String t2 = bb.getText();
 						jl1.setText(t1 + t2);
 					}
-				});
+				}); 
 			} else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
 				jb[i].addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
