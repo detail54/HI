@@ -1,4 +1,4 @@
-package network;
+package network_serber;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -13,7 +13,7 @@ public class Serversocket1 {
 		ServerSocket ser = null;
 
 		try {
-			ser = new ServerSocket(); // 서버 소켓 생성
+			ser = new ServerSocket(); // 서버 소켓 생성. 필수. 서버소켓 생성안되면 소켓 생성 불가.
 			ser.bind(new InetSocketAddress("localhost", 5001));
 			// 2. 서버소켓과 서버소켓이 연결될 경우 ip주소와 포트번호
 
