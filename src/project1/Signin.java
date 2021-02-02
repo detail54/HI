@@ -115,11 +115,11 @@ public class Signin extends JFrame {
 						while (true) {
 							if (set_id.equals(ary_id.get(i))) {
 								if (set_pw.equals(ary_pw.get(i))) {
+									Home h = new Home();
+									h.dispose();
 									fi.close();
 									br.close();
 									setVisible(false);
-									Home h = new Home();
-									h.setVisible(false);
 									Main m = new Main();
 									m.setVisible(true);
 									break;
