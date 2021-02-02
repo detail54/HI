@@ -18,9 +18,10 @@ public class test2 {
 		while(it.hasNext()) {
 			String str = it.next();
 			if(str.compareTo("three")==0){
-				l.remove(2);
+				it.remove();
 			}
 		}
+		
 		it = l.iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next());
