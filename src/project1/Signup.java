@@ -3,73 +3,127 @@ package project1;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public class Signup extends JFrame {
+class Id_Pw{
+	String id;
+	String pw;
+	Id_Pw(String id, String pw){
+		this.id=id;
+		this.pw=pw;
+	}
+	String out() {
+		return id+" "+pw;
+	}
+}
 
-	Signup() {
+public class Signup extends JFrame{
+
+	Signup(){
+		
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		
 		JPanel jp1;
 		JPanel jp2;
 		JPanel jp3;
-		JLabel main_Title;
-		JLabel main_Img;
-		JButton jb_signin;
-		JButton jb_signup;
+		JTextField id;
+		JTextField pw;
+		JLabel text_signup;
+		JLabel text_id;
+		JLabel text_pw;
+		JLabel n;
+		JButton ok_button;
 		
 		jp1 = new JPanel();
+		jp1.setSize(300,20);
 		jp1.setBackground(Color.black);
 		
-		main_Title = new JLabel("J-Market");
-		main_Title.setFont(new Font("impact", Font.PLAIN, 70));
-		main_Title.setForeground(Color.white);
-		jp1.add(main_Title);
+		text_signup = new JLabel("È¸¿ø°¡ÀÔ");
+		text_signup.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 20));
+		text_signup.setForeground(Color.white);
+		
+		jp1.add(text_signup);
 		c.add(jp1,BorderLayout.NORTH);
 		
-		
 		jp2 = new JPanel();
+		jp2.setLayout(new FlowLayout());
+		jp2.setSize(300,120);
 		jp2.setBackground(Color.black);
-		ImageIcon im = new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/img/cart.png");
-		main_Img = new JLabel(im);
-		jp2.add(main_Img);
-		c.add(jp2,BorderLayout.CENTER);
 		
+		n = new JLabel("    ");
+		
+		text_id = new JLabel("ID");
+		text_id.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 20));
+		text_id.setForeground(Color.white);
+		text_pw = new JLabel("PW");
+		text_pw.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 20));
+		text_pw.setForeground(Color.white);
+		
+		id = new JTextField(20);
+		pw = new JTextField(20);
+		
+		jp2.add(text_id);
+		jp2.add(id);
+		jp2.add(n);
+		jp2.add(text_pw);
+		jp2.add(pw);
+		c.add(jp2,BorderLayout.CENTER);
 		
 		jp3 = new JPanel();
 		jp3.setBackground(Color.black);
+		jp3.setSize(300,10);
 		
-
-		jb_signin = new JButton("sign in");
-		jb_signin.setFont(new Font("impact", Font.PLAIN, 16));
-		//jb_signin.setBounds(190, 500, 90, 30);
-		jp3.add(jb_signin);
+		ok_button = new JButton("È®ÀÎ");
+		ok_button.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 20));
+		ok_button.setForeground(Color.white);
+		ok_button.setBackground(Color.darkGray);
 		
-		jb_signup = new JButton("sign up");
-		jb_signup.setFont(new Font("impact", Font.PLAIN, 16));
-		//jb_signup.setBounds(290, 500, 90, 30);
-		jp3.add(jb_signup);
+		ok_button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+					FileWriter fw = new FileWriter("src/project1/Guest.txt");
+					
+					Id_Pw input = new Id_Pw(id.getText(),pw.getText());
+					fw.write(input.out());
+					fw.close();
+					JOptionPane.showMessageDialog(null, "È¸¿ø°¡ÀÔ ¿Ï·á!");
+					setVisible(false);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		
+		jp3.add(ok_button);		
 		c.add(jp3,BorderLayout.SOUTH);
-
-
-		setSize(400, 600);
+		
+		setLocationRelativeTo(null);
+		setSize(300,200);
 		setVisible(true);
-		//setResizable(false);
+		setResizable(false);
+		
 	}
-
+	
 	public static void main(String[] args) {
 
 		new Signup();
-
+		
 	}
 
 }
