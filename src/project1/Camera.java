@@ -2,15 +2,15 @@ package project1;
 
 import javax.swing.JFrame;
 
-public class Basket extends JFrame{
+public class Camera extends JFrame{
 
-	Basket(){
+	Camera(){
 		
 		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		new Basket();
+		new Camera();
 	}
 
 }

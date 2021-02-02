@@ -25,14 +25,14 @@ class Id_Pw{
 		this.pw=pw;
 	}
 	String out() {
-		return id+" "+pw;
+		return id+" "+pw+"\n";
 	}
 }
 
 public class Signup extends JFrame{
 
 	Signup(){
-		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		
@@ -91,12 +91,12 @@ public class Signup extends JFrame{
 		ok_button.setForeground(Color.white);
 		ok_button.setBackground(Color.darkGray);
 		
-		ok_button.addActionListener(new ActionListener() {
+		ok_button.addActionListener(new ActionListener() {	//입력한 정보 텍스트 파일에 저장.
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				try {
-					FileWriter fw = new FileWriter("src/project1/Guest.txt");
+					FileWriter fw = new FileWriter("src/project1/Guest.txt",true); //true를 넣어서 누적 작성되게함.
 					
 					Id_Pw input = new Id_Pw(id.getText(),pw.getText());
 					fw.write(input.out());

@@ -2,15 +2,14 @@ package project1;
 
 import javax.swing.JFrame;
 
-public class Basket extends JFrame{
+public class Airconditioner extends JFrame{
 
-	Basket(){
+	Airconditioner(){
 		
-		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		new Basket();
+		new Airconditioner();
 	}
 
 }

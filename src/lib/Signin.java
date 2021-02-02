@@ -1,4 +1,4 @@
-package project1;
+package lib;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -20,16 +20,16 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import project1.Main;
+
 public class Signin extends JFrame {
 
-	
 	static String set_id;
 	static String set_pw;
 	static String read_id;
 	static String read_pw;
-
+	
 	Signin() {
-		
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 
@@ -115,14 +115,11 @@ public class Signin extends JFrame {
 						while (true) {
 							if (set_id.equals(ary_id.get(i))) {
 								if (set_pw.equals(ary_pw.get(i))) {
-									Home h = new Home();
-									h.dispose();
 									fi.close();
 									br.close();
 									setVisible(false);
-									Main m = new Main();
-									m.setVisible(true);
 									break;
+									
 								} else {
 									JOptionPane.showMessageDialog(null, "비밀번호가 틀립니다.");
 									id.setText(id.getText());
