@@ -33,39 +33,43 @@ public class Change extends JFrame {
 	public Tv tv = null;
 	public Payment pay = null;
 	public JPanel minibasket;
-	public JPanel screen;
+	public JPanel salelist;
 
 	Change() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(1000, 700);
+		setSize(1000, 680);
 		setLocation(270, 100);
 
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 		c.setBackground(Color.black);
 
+			//화면 왼쪽 장바구니 리스트 구현 패널
 		minibasket = new JPanel();
+		minibasket.setPreferredSize(new Dimension(300,700));
 		minibasket.setOpaque(true);
-		minibasket.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
-		minibasket.setBackground(Color.red);
+		minibasket.setBackground(Color.black);
 		c.add(minibasket,BorderLayout.WEST);
 
-		JLabel center = new JLabel(Integer.toString((int) (Math.random() * 50)));
-		center.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
-		center.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
-		minibasket.add(center);
+		JLabel minibasket_in = new JLabel("장바구니 자리");
+		minibasket_in.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
+		minibasket_in.setPreferredSize(new Dimension(300,580));
+		minibasket_in.setOpaque(true);
+		minibasket_in.setBackground(Color.white);
+		//center.setBorder(BorderFactory.createLineBorder(Color.darkGray, 1, true));	//테두리 임시 제거.
+		minibasket.add(minibasket_in);
 		
-		screen = new JPanel();
-		screen.setBackground(Color.orange);
-		c.add(screen,BorderLayout.CENTER);
-
+			//화면 오른쪽 변경될 화면 패널. 초기는 Main으로 지정.
+		c.add(new Main(),BorderLayout.CENTER);
+		
+			//화면전환 메뉴바 이용해봄. 클릭하면 해당 화면 이동
 		JMenuBar menu_bar;
 		menu_bar = new JMenuBar();
 		menu_bar.setBackground(Color.black);
 		menu_bar.setPreferredSize(new Dimension(80, 50));
 		setJMenuBar(menu_bar);
-
-		// 메뉴바 이용해봄. 클릭하면 해당 화면 이동
+			
+			//메뉴아이템으로 생성하고 메뉴이름, 액션이벤트 구현.
 		String[] menuName = { "Main", "   TV", "컴퓨터", "카메라", "에어컨", "핸드폰", "냉장고", "장바구니", "   결제", "Log-Out" };
 		JMenuItem[] jmenu = new JMenuItem[10];
 
@@ -100,10 +104,10 @@ public class Change extends JFrame {
 
 	}
 
+		//화면 이동시, 왼쪽 장바구니리스트 유지한채 오른쪽 화면만 변경시키는 메소드.
 	public void change(String a) {
 
 		if (a.equals("Main")) {
-			//getContentPane().removeAll();
 			getContentPane().remove(1);
 			main = new Main();
 			getContentPane().add(main,BorderLayout.CENTER);

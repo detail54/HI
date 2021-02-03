@@ -14,7 +14,7 @@ public class Camera extends JPanel{
 		setOpaque(true);
 		setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
 		
-		JLabel center = new JLabel(Integer.toString((int) (Math.random() * 50)));
+		JLabel center = new JLabel("Ä«¸Þ¶ó");
 		center.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
 		add(center);
 		

@@ -151,8 +151,8 @@ public class Home extends JFrame {
 									fi.close();
 									br.close();
 									setVisible(false);
-									Main m = new Main();
-									m.setVisible(true);
+									Change ch = new Change();
+									ch.setVisible(true);
 									break;
 								} else {
 									JOptionPane.showMessageDialog(null, "비밀번호가 틀립니다.");
