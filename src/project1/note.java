@@ -1,33 +1,53 @@
 package project1;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class note {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-	public static void main(String[] args) {
-		FileReader fi;
-		try {
-			fi = new FileReader("src/project1/Guest.txt");
-			BufferedReader br = new BufferedReader(fi);
+public class note extends JFrame{
 
-			ArrayList<String> ary_id = new ArrayList<String>();
-			ArrayList<String> ary_pw = new ArrayList<String>();
-			String read;
-
-			while ((read = br.readLine()) != null) { // 텍스트 파일에 저장된 id,pw 불러서 ArrayList에 저장.
-				int idx = read.indexOf(" ");
-				ary_id.add(read.substring(0, idx));
-				ary_pw.add(read.substring(idx + 1, (read.length() - 1) + 1));
+	note(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Container c = getContentPane();
+		c.setLayout(new GridLayout(1,2));
+		
+		JPanel jp1 = new JPanel();
+		jp1.setBackground(Color.black);
+		JPanel jp2 = new JPanel();
+		jp2.setBackground(Color.blue);
+		JPanel jp3 = new JPanel();
+		jp3.setBackground(Color.orange);
+		
+		c.add(jp3);
+		c.add(jp1);
+		
+		
+		JButton jb = new JButton("HI");
+		jp3.add(jb);
+		
+		jb.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				remove(jp1);
+				getContentPane().add(jp2);
+				revalidate();
+				repaint();
 			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		});
+		
+		setVisible(true);
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		new note();
 
 	}
 }

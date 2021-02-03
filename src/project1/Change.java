@@ -1,11 +1,13 @@
  package project1;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -30,7 +32,8 @@ public class Change extends JFrame {
 	public Computer com = null;
 	public Tv tv = null;
 	public Payment pay = null;
-	public JPanel jm;
+	public JPanel minibasket;
+	public JPanel screen;
 
 	Change() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,17 +41,23 @@ public class Change extends JFrame {
 		setLocation(270, 100);
 
 		Container c = getContentPane();
-		c.setLayout(new CardLayout(0, 15));
+		c.setLayout(new BorderLayout());
 		c.setBackground(Color.black);
 
-		jm = new JPanel();
-		jm.setOpaque(true);
-		jm.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
-		c.add(jm);
+		minibasket = new JPanel();
+		minibasket.setOpaque(true);
+		minibasket.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
+		minibasket.setBackground(Color.red);
+		c.add(minibasket,BorderLayout.WEST);
 
 		JLabel center = new JLabel(Integer.toString((int) (Math.random() * 50)));
 		center.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
-		jm.add(center);
+		center.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
+		minibasket.add(center);
+		
+		screen = new JPanel();
+		screen.setBackground(Color.orange);
+		c.add(screen,BorderLayout.CENTER);
 
 		JMenuBar menu_bar;
 		menu_bar = new JMenuBar();
@@ -94,51 +103,52 @@ public class Change extends JFrame {
 	public void change(String a) {
 
 		if (a.equals("Main")) {
-			getContentPane().removeAll();
+			//getContentPane().removeAll();
+			getContentPane().remove(1);
 			main = new Main();
-			getContentPane().add(main);
+			getContentPane().add(main,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("   TV")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			tv = new Tv();
-			getContentPane().add(tv);
+			getContentPane().add(tv,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("컴퓨터")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			com = new Computer();
-			getContentPane().add(com);
+			getContentPane().add(com,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("카메라")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			ca = new Camera();
-			getContentPane().add(ca);
+			getContentPane().add(ca,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("에어컨")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			air = new Airconditioner();
-			getContentPane().add(air);
+			getContentPane().add(air,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("냉장고")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			re = new Refrigerator();
-			getContentPane().add(re);
+			getContentPane().add(re,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("장바구니")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			ba = new Basket();
-			getContentPane().add(ba);
+			getContentPane().add(ba,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		} else if (a.equals("   결제")) {
-			getContentPane().removeAll();
+			getContentPane().remove(1);
 			pay = new Payment();
-			getContentPane().add(pay);
+			getContentPane().add(pay,BorderLayout.CENTER);
 			revalidate();
 			repaint();
 		}
