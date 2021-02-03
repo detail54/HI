@@ -22,6 +22,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+//로그인 화면
+
 public class Home extends JFrame {
 
 	static String set_id;
@@ -47,7 +49,7 @@ public class Home extends JFrame {
 		JLabel text_pw;
 		JButton jb_login;
 		JButton jb_signup;
-		JLabel n;
+		JLabel n;		//간격 띄우는 용도..
 
 		jp1 = new JPanel();
 		jp1.setBackground(Color.black);
@@ -97,7 +99,7 @@ public class Home extends JFrame {
 		jb_login.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		jp3.add(jb_login);
 
-		n = new JLabel("           "); // 여백용....
+		n = new JLabel("           ");
 		jp3.add(n);
 
 		jb_signup = new JButton("sign up");
@@ -152,7 +154,6 @@ public class Home extends JFrame {
 									Main m = new Main();
 									m.setVisible(true);
 									break;
-
 								} else {
 									JOptionPane.showMessageDialog(null, "비밀번호가 틀립니다.");
 									id.setText(id.getText());

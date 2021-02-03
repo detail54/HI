@@ -1,8 +1,9 @@
 package project1;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class Airconditioner extends JFrame{
+public class Airconditioner extends JPanel{
 
 	Airconditioner(){
 		

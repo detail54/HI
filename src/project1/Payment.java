@@ -1,9 +1,15 @@
 package project1;
 
-public class Payment {
+import javax.swing.JPanel;
 
+public class Payment extends JPanel{
+
+	Payment(){
+		
+	}
+	
 	public static void main(String[] args) {
-
+		new Payment();
 	}
 
 }

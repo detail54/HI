@@ -1,8 +1,9 @@
 package project1;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class Cellphone extends JFrame{
+public class Cellphone extends JPanel{
 
 	Cellphone(){
 		
