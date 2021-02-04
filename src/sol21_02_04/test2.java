@@ -98,7 +98,7 @@ public class test2 extends JFrame {
 			}
 
 			int n = i;
-
+						//누른 커피만 버튼 활성화
 			jb_choice[n].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 
@@ -141,7 +141,7 @@ public class test2 extends JFrame {
 						}
 					}
 				}
-			});
+			});	
 			jb_plus[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					int sum = Integer.parseInt(jt[n].getText());
@@ -168,8 +168,9 @@ public class test2 extends JFrame {
 				}
 			});
 		}
-
+		
 		setSize(600, 450);
+		setResizable(false);
 		setVisible(true);
 	}
 
