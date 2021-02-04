@@ -1,6 +1,5 @@
 package sol21_02_04;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
