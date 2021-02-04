@@ -106,6 +106,7 @@ public class test2 extends JFrame {
 						jb_plus[n].setEnabled(true);
 						jb_minus[n].setEnabled(true);
 						jb_ok[n].setEnabled(true);
+						
 						for (int j = 1; j < 3; j++) {
 							jb_plus[j].setEnabled(false);
 							jb_minus[j].setEnabled(false);
@@ -117,6 +118,7 @@ public class test2 extends JFrame {
 						jb_plus[n].setEnabled(true);
 						jb_minus[n].setEnabled(true);
 						jb_ok[n].setEnabled(true);
+						
 						for (int j = 0; j < 3; j++) {
 							if (j == 1) {
 								continue;
@@ -132,6 +134,7 @@ public class test2 extends JFrame {
 						jb_plus[n].setEnabled(true);
 						jb_minus[n].setEnabled(true);
 						jb_ok[n].setEnabled(true);
+						
 						for (int j = 0; j < 2; j++) {
 							jb_plus[j].setEnabled(false);
 							jb_minus[j].setEnabled(false);
@@ -148,6 +151,7 @@ public class test2 extends JFrame {
 					jt[n].setText(Integer.toString(sum + 1));
 				}
 			});
+			
 			jb_minus[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					if (jt[n].getText().equals("0")) {
@@ -158,6 +162,7 @@ public class test2 extends JFrame {
 					}
 				}
 			});
+			
 			jb_ok[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String pr = jl_price[n].getText();
@@ -168,6 +173,7 @@ public class test2 extends JFrame {
 				}
 			});
 		}
+		
 		
 		setSize(600, 450);
 		setResizable(false);
