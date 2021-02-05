@@ -69,6 +69,7 @@ public class test2 extends JFrame {
 			jt[i] = new JTextField(7);
 			jt[i].setText("0");
 			jt[i].setPreferredSize(new Dimension(7, 30));
+			jt[i].setEditable(false);
 
 			jl_sum[i] = new JLabel("");
 			jl_sum[i].setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 20));
@@ -106,6 +107,7 @@ public class test2 extends JFrame {
 						jb_plus[n].setEnabled(true);
 						jb_minus[n].setEnabled(true);
 						jb_ok[n].setEnabled(true);
+						jt[n].setEditable(true);
 						
 						for (int j = 1; j < 3; j++) {
 							jb_plus[j].setEnabled(false);
@@ -113,11 +115,13 @@ public class test2 extends JFrame {
 							jb_ok[j].setEnabled(false);
 							jl_sum[j].setText("");
 							jt[j].setText("0");
+							jt[j].setEditable(false);
 						}
 					} else if (n == 1) {
 						jb_plus[n].setEnabled(true);
 						jb_minus[n].setEnabled(true);
 						jb_ok[n].setEnabled(true);
+						jt[n].setEditable(true);
 						
 						for (int j = 0; j < 3; j++) {
 							if (j == 1) {
@@ -128,12 +132,14 @@ public class test2 extends JFrame {
 								jb_ok[j].setEnabled(false);
 								jl_sum[j].setText("");
 								jt[j].setText("0");
+								jt[j].setEditable(false);
 							}
 						}
 					} else if (n == 2) {
 						jb_plus[n].setEnabled(true);
 						jb_minus[n].setEnabled(true);
 						jb_ok[n].setEnabled(true);
+						jt[n].setEditable(true);
 						
 						for (int j = 0; j < 2; j++) {
 							jb_plus[j].setEnabled(false);
@@ -141,6 +147,7 @@ public class test2 extends JFrame {
 							jb_ok[j].setEnabled(false);
 							jl_sum[j].setText("");
 							jt[j].setText("0");
+							jt[j].setEditable(false);
 						}
 					}
 				}
