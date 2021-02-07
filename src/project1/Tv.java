@@ -69,7 +69,7 @@ public class Tv extends JPanel {
 			itemImgLabel[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			itemLabel[i].add(itemImgLabel[i]);
 
-			for (int j = 0; j < Integer.parseInt((String) c.buyItemTable.getValueAt(j, 1)); j++) {
+			for (int j = 0; j < Integer.parseInt((String)c.buyItemTable.getValueAt(j, 1)); j++) {
 				//테이블 행 수만큼 반복해서  상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가, 있으면 얻어온 값에 +1
 				// + 체인지 클래스 생성하면 창 하나 더생성되서 수정필요. 
 			}

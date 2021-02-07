@@ -54,7 +54,7 @@ public class Change extends JFrame {
 	public JScrollPane js;
 	public ArrayList<Basketadd> buyItem;
 
-	Change() {
+	public void change() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1000, 680);
 		setLocation(270, 100);
@@ -213,7 +213,8 @@ public class Change extends JFrame {
 
 	public static void main(String[] args) {
 
-		new Change();
+		Change c = new Change();
+		c.change();
 	}
 
 }
