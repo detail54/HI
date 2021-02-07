@@ -17,8 +17,7 @@ import javax.swing.JPanel;
 public class Tv extends JPanel {
 
 	Change c = new Change();
-	
-	
+
 	Tv() {
 		this.setBackground(Color.black);
 		setOpaque(true);
@@ -56,6 +55,9 @@ public class Tv extends JPanel {
 				(int) (Math.random() * 219000) + 30000, (int) (Math.random() * 2990000) + 100000 }; // 할인가격
 
 		for (int i = 0; i < itemLabel.length; i++) {
+			int n = i; // 액션리스너 배열 인덱스값
+			String p = String.valueOf(itemPrice[i]); // 할인가 문자열 변환.
+
 			itemLabel[i] = new JLabel();
 			itemLabel[i].setLayout(new FlowLayout());
 			itemLabel[i].setPreferredSize(new Dimension(200, 200));
@@ -66,10 +68,15 @@ public class Tv extends JPanel {
 			itemImgLabel[i].setBackground(Color.red);
 			itemImgLabel[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			itemLabel[i].add(itemImgLabel[i]);
-			
+
+			for (int j = 0; j < Integer.parseInt((String) c.buyItemTable.getValueAt(j, 1)); j++) {
+				//테이블 행 수만큼 반복해서  상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가, 있으면 얻어온 값에 +1
+				// + 체인지 클래스 생성하면 창 하나 더생성되서 수정필요. 
+			}
+
 			itemImgLabel[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					
+					// c.buyItem.add(itemNameLabel[n].getText(),q.toString(),saleLabel[n].getText());
 				}
 			});
 
@@ -96,7 +103,7 @@ public class Tv extends JPanel {
 			saleTextLabel[i].setHorizontalAlignment(JLabel.CENTER);
 			itemLabel[i].add(saleTextLabel[i]);
 
-			String price = String.format("%,d", salePrice[i]);	//1000원 단위 콤마
+			String price = String.format("%,d", salePrice[i]); // 1000원 단위 콤마
 
 			saleLabel[i] = new JLabel(price + "원");
 			saleLabel[i].setFont(new Font("나눔고딕 보통", Font.BOLD, 30));
@@ -105,7 +112,7 @@ public class Tv extends JPanel {
 			saleLabel[i].setHorizontalAlignment(JLabel.CENTER);
 			saleLabel[i].setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 			itemLabel[i].add(saleLabel[i]);
-			
+
 		}
 
 	}

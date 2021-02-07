@@ -52,7 +52,6 @@ public class Change extends JFrame {
 	public DefaultTableModel model;
 	public JTable buyItemTable;
 	public JScrollPane js;
-	
 	public ArrayList<Basketadd> buyItem;
 
 	Change() {
@@ -80,17 +79,17 @@ public class Change extends JFrame {
 		minibasket_in.setBackground(Color.white);
 		minibasket.add(minibasket_in);
 		
-		String[] buyItemHeader = { "상품명", "금액", "수량" };
+		String[] buyItemHeader = { "상품명", "수량", "금액" };
 		
 		model = new DefaultTableModel(buyItemHeader,22);
 		buyItemTable = new JTable(model);
 		//buyItemTable.setShowHorizontalLines(false);	//가로 선 제거
 		//buyItemTable.setShowVerticalLines(false);	//세로 선 제거
-		
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
-		
 		minibasket_in.add(js);
+		
+		//JLabel totalPrice = new JLabel("결제금액: ");
 		
 		JButton basketButton = new JButton("장바구니");
 		basketButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
