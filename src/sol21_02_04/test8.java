@@ -16,12 +16,12 @@ class Worker {
 	static HashMap<String, ArrayList<String>> h = new HashMap<>();
 	static ArrayList<String> ary = new ArrayList<String>();
 
-	Worker(String num, String name, String bo, String jo, String bu) {
-		this.name = name;
-		this.num = num;
-		this.bo = bo;
-		this.jo = jo;
-		this.bu = bu;
+	Worker(String a, String b, String c, String d, String e) {
+		name = b;
+		num = a;
+		bo = c;
+		jo = d;
+		bu = e;
 
 		ary.add(name);
 		ary.add(bo);

@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 public class Tv extends JPanel {
 
 	Change c = new Change();
-
+	
 	Tv() {
 		this.setBackground(Color.black);
 		setOpaque(true);
@@ -55,7 +55,7 @@ public class Tv extends JPanel {
 				(int) (Math.random() * 219000) + 30000, (int) (Math.random() * 2990000) + 100000 }; // 할인가격
 
 		for (int i = 0; i < itemLabel.length; i++) {
-			int n = i; // 액션리스너 배열 인덱스값
+			int n = i; // 액션리스너 인덱스값
 			String p = String.valueOf(itemPrice[i]); // 할인가 문자열 변환.
 
 			itemLabel[i] = new JLabel();
@@ -68,25 +68,6 @@ public class Tv extends JPanel {
 			itemImgLabel[i].setBackground(Color.red);
 			itemImgLabel[i].setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			itemLabel[i].add(itemImgLabel[i]);
-			
-			
-			//j < Integer.parseInt((String)c.buyItemTable.getValueAt(j, 1));
-			
-
-			itemImgLabel[i].addMouseListener(new MouseAdapter() {
-				public void mouseClicked(MouseEvent e) {
-					// c.buyItem.add(itemNameLabel[n].getText(),q.toString(),saleLabel[n].getText());
-					while (c.buyItemTable.getValueAt(n, 1)!=null) {
-						//테이블 행 수만큼 반복해서  상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가, 있으면 얻어온 값에 +1
-						if(c.buyItemTable.getValueAt(n, 1) == null) {
-							c.buyItemTable.setValueAt("1", n, 1);
-						} else {
-							int plus = Integer.parseInt((String) c.buyItemTable.getValueAt(n, 1)+1);
-							c.buyItemTable.setValueAt(String.valueOf(plus), n, 1);
-						}
-					}
-				}
-			});
 
 			itemNameLabel[i] = new JLabel(itemName[i]);
 			itemNameLabel[i].setFont(new Font("나눔고딕 보통", Font.BOLD, 20));
@@ -120,6 +101,23 @@ public class Tv extends JPanel {
 			saleLabel[i].setHorizontalAlignment(JLabel.CENTER);
 			saleLabel[i].setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 			itemLabel[i].add(saleLabel[i]);
+
+			// j < Integer.parseInt((String)c.buyItemTable.getValueAt(j, 1));
+
+			itemImgLabel[i].addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e) {
+					/*
+					 * int si = 0; while (true) { //테이블 행 수만큼 반복해서 상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가,
+					 * 있으면 얻어온 값에 +1 if(c.buyItemTable.getValueAt(n, 0).equals(itemName[n])) { int
+					 * plus = Integer.parseInt((String) c.buyItemTable.getValueAt(n, 1)+1);
+					 * c.model.setValueAt(String.valueOf(plus), n, 1); } else
+					 * if(c.buyItemTable.getValueAt(n, 0) == null){ String[] in = new String[3];
+					 * in[0] = itemName[n]; in[1] = "1"; in[2] = price; c.model.addRow(in); } else {
+					 * si++; continue; } }
+					 */
+					new Change(itemName[n],"1",price);
+				}
+			});
 
 		}
 

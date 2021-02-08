@@ -22,18 +22,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-class Basketadd{
-	String itemName;
-	String itemQuantity;
-	String itemprice;
-	
-	Basketadd(String a, String b, String c){
-		itemName = a;
-		itemQuantity = b;
-		itemprice = c;
-	}
-}
-
 //화면 전환 구현.
 
 public class Change extends JFrame {
@@ -52,8 +40,17 @@ public class Change extends JFrame {
 	public DefaultTableModel model;
 	public JTable buyItemTable;
 	public JScrollPane js;
-	public ArrayList<Basketadd> buyItem;
 
+	Change(){
+		
+	}
+	Change(String a, String b, String c){
+		String[] in = new String[3];
+		in[0] = a;
+		in[1] = b;
+		in[2] = c;
+		model.addRow(in);
+	}
 	public void change() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1000, 680);
@@ -78,19 +75,19 @@ public class Change extends JFrame {
 		minibasket_in.setOpaque(true);
 		minibasket_in.setBackground(Color.white);
 		minibasket.add(minibasket_in);
-		
+
 		String[] buyItemHeader = { "상품명", "수량", "금액" };
-		
-		model = new DefaultTableModel(buyItemHeader,22);
+
+		model = new DefaultTableModel(buyItemHeader, 0);
 		buyItemTable = new JTable(model);
-		//buyItemTable.setShowHorizontalLines(false);	//가로 선 제거
-		//buyItemTable.setShowVerticalLines(false);	//세로 선 제거
+		// buyItemTable.setShowHorizontalLines(false); //가로 선 제거
+		// buyItemTable.setShowVerticalLines(false); //세로 선 제거
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
 		minibasket_in.add(js);
-		
-		//JLabel totalPrice = new JLabel("결제금액: ");
-		
+
+		// JLabel totalPrice = new JLabel("결제금액: ");
+
 		JButton basketButton = new JButton("장바구니");
 		basketButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		basketButton.setFont(new Font("나눔고딕 보통", Font.BOLD, 23));
@@ -98,7 +95,7 @@ public class Change extends JFrame {
 		basketButton.setPreferredSize(new Dimension(130, 100));
 		basketButton.setOpaque(true);
 		basketButton.setBackground(Color.black);
-		
+
 		JButton payButton = new JButton("구매");
 		payButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		payButton.setFont(new Font("나눔고딕 보통", Font.BOLD, 23));
@@ -106,11 +103,10 @@ public class Change extends JFrame {
 		payButton.setPreferredSize(new Dimension(130, 100));
 		payButton.setOpaque(true);
 		payButton.setBackground(Color.black);
-		
+
 		minibasket_in.add(basketButton);
 		minibasket_in.add(payButton);
-		
-		
+
 		// 화면 오른쪽 변경될 화면 패널. 초기는 Main으로 지정.
 		c.add(new Main(), BorderLayout.CENTER);
 
@@ -210,6 +206,7 @@ public class Change extends JFrame {
 			repaint();
 		}
 	}
+
 
 	public static void main(String[] args) {
 
