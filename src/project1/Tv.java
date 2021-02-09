@@ -32,7 +32,6 @@ public class Tv extends JPanel {
 		add(center);
 
 		JLabel[] itemLabel = new JLabel[6]; // 상품 칸
-
 		JLabel[] itemImgLabel = new JLabel[6];
 		JLabel[] itemNameLabel = new JLabel[6];
 		JLabel[] priceLabel = new JLabel[6]; // 정상가격레이블
@@ -115,7 +114,7 @@ public class Tv extends JPanel {
 					 * in[0] = itemName[n]; in[1] = "1"; in[2] = price; c.model.addRow(in); } else {
 					 * si++; continue; } }
 					 */
-					new Change(itemName[n],"1",price);
+					new Change(String.valueOf(itemName[n]),String.valueOf(1),String.valueOf(price));
 				}
 			});
 

@@ -17,8 +17,8 @@ class Worker {
 	static ArrayList<String> ary = new ArrayList<String>();
 
 	Worker(String a, String b, String c, String d, String e) {
-		name = b;
 		num = a;
+		name = b;
 		bo = c;
 		jo = d;
 		bu = e;

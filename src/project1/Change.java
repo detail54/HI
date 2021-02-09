@@ -26,15 +26,15 @@ import javax.swing.table.DefaultTableModel;
 
 public class Change extends JFrame {
 
-	public Main main = null;
-	public Basket ba = null;
-	public Refrigerator re = null;
-	public Cellphone cell = null;
-	public Airconditioner air = null;
-	public Camera ca = null;
-	public Computer com = null;
-	public Tv tv = null;
-	public Payment pay = null;
+	public Main main;
+	public Basket ba;
+	public Refrigerator re;
+	public Cellphone cell;
+	public Airconditioner air;
+	public Camera ca;
+	public Computer com;
+	public Tv tv;
+	public Payment pay;
 	public JButton basketButton;
 	public JButton payButton;
 	public DefaultTableModel model;
