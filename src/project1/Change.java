@@ -22,6 +22,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+
 //화면 전환 구현.
 
 public class Change extends JFrame {
@@ -37,8 +38,8 @@ public class Change extends JFrame {
 	public Payment pay;
 	public JButton basketButton;
 	public JButton payButton;
-	public String[] buyItemHeader = { "상품명", "수량", "금액" };
-	public DefaultTableModel model = new DefaultTableModel(buyItemHeader, 0);
+	public static String[] buyItemHeader = { "상품명", "수량", "금액" };
+	public static DefaultTableModel model = new DefaultTableModel(buyItemHeader, 0);
 	public JTable buyItemTable = new JTable(model);
 	public JScrollPane js;
 	public String in1;
@@ -70,17 +71,11 @@ public class Change extends JFrame {
 		minibasket_in.setBackground(Color.white);
 		minibasket.add(minibasket_in);
 
-		
-
-		
-		
-		// buyItemTable.setShowHorizontalLines(false); //가로 선 제거
-		// buyItemTable.setShowVerticalLines(false); //세로 선 제거
+		buyItemTable.setShowHorizontalLines(false); //가로 선 제거
+		buyItemTable.setShowVerticalLines(false); //세로 선 제거
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
 		minibasket_in.add(js);
-		
-		
 
 		// JLabel totalPrice = new JLabel("결제금액: ");
 
@@ -143,7 +138,6 @@ public class Change extends JFrame {
 				});
 			}
 		}
-
 		setVisible(true);
 		// setResizable(false);
 
@@ -161,6 +155,7 @@ public class Change extends JFrame {
 		} else if (a.equals("   TV")) {
 			getContentPane().remove(1);
 			tv = new Tv();
+			tv.tv();
 			getContentPane().add(tv, BorderLayout.CENTER);
 			revalidate();
 			repaint();
@@ -202,7 +197,6 @@ public class Change extends JFrame {
 			repaint();
 		}
 	}
-
 
 	public static void main(String[] args) {
 

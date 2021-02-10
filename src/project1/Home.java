@@ -152,6 +152,7 @@ public class Home extends JFrame {
 									br.close();
 									setVisible(false);
 									Change ch = new Change();
+									ch.change();
 									ch.setVisible(true);
 									break;
 								} else {

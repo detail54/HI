@@ -18,9 +18,15 @@ import javax.swing.table.DefaultTableModel;
 public class Tv extends JPanel {
 
 	Change c = new Change();
+	public JLabel[] itemLabel = new JLabel[6]; // 상품 칸
+	public JLabel[] itemImgLabel = new JLabel[6];
+	public JLabel[] itemNameLabel = new JLabel[6];
+	public JLabel[] priceLabel = new JLabel[6]; // 정상가격레이블
+	public JLabel[] saleLabel = new JLabel[6]; // 할인가격레이블
+	public JLabel[] saleTextLabel = new JLabel[6];
 	
-	
-	Tv() {
+
+	void tv() {
 		this.setBackground(Color.black);
 		setOpaque(true);
 
@@ -32,14 +38,6 @@ public class Tv extends JPanel {
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-
-		JLabel[] itemLabel = new JLabel[6]; // 상품 칸
-		JLabel[] itemImgLabel = new JLabel[6];
-		JLabel[] itemNameLabel = new JLabel[6];
-		JLabel[] priceLabel = new JLabel[6]; // 정상가격레이블
-		JLabel[] saleLabel = new JLabel[6]; // 할인가격레이블
-		JLabel[] saleTextLabel = new JLabel[6];
-
 		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv1.jpg"),
 				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv2.jpg"),
 				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv3.jpg"),
@@ -107,18 +105,20 @@ public class Tv extends JPanel {
 
 			itemImgLabel[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					/*
-					 * int si = 0; while (true) { //테이블 행 수만큼 반복해서 상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가,
-					 * 있으면 얻어온 값에 +1 if(c.buyItemTable.getValueAt(n, 0).equals(itemName[n])) { int
-					 * plus = Integer.parseInt((String) c.buyItemTable.getValueAt(n, 1)+1);
-					 * c.model.setValueAt(String.valueOf(plus), n, 1); } else
-					 * if(c.buyItemTable.getValueAt(n, 0) == null){ String[] in = new String[3];
-					 * in[0] = itemName[n]; in[1] = "1"; in[2] = price; c.model.addRow(in); } else {
-					 * si++; continue; } }
-					 */
-					String[] in = {itemPrice[n],"1",price};
-					//new Change(itemName[n],"1",price);
-					c.model.addRow(in);
+					//c.model.addRow(new Object[] { itemName[n], "1", price });
+
+					int si = 0;
+					while (true) { // 테이블 행 수만큼 반복해서 상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가,있으면 얻어온 값에 +1
+									// if(c.buyItemTable.getValueAt(n, 0).equals(itemName[n])) 
+						if (c.model.getValueAt(si, 0) == null) {
+							c.model.addRow(new Object[] { itemName[n], "1", price });
+						} else if (c.model.getValueAt(si, 0).equals(itemName[n])) {
+							int plus = Integer.parseInt((String) c.model.getValueAt(si, 1) + 1);
+							c.model.setValueAt(String.valueOf(plus), si, 1);
+						} else if(c.model.getValueAt(si, 0) != null && !(c.model.getValueAt(si, 0).equals(itemName[n]))){
+							si++;
+						}
+					}
 				}
 			});
 
@@ -126,3 +126,4 @@ public class Tv extends JPanel {
 
 	}
 }
+//c.model.addRow(new Object[] { itemName[n], "1", price });
