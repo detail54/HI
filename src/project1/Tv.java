@@ -13,10 +13,12 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 public class Tv extends JPanel {
 
 	Change c = new Change();
+	
 	
 	Tv() {
 		this.setBackground(Color.black);
@@ -114,7 +116,9 @@ public class Tv extends JPanel {
 					 * in[0] = itemName[n]; in[1] = "1"; in[2] = price; c.model.addRow(in); } else {
 					 * si++; continue; } }
 					 */
-					new Change(String.valueOf(itemName[n]),String.valueOf(1),String.valueOf(price));
+					String[] in = {itemPrice[n],"1",price};
+					//new Change(itemName[n],"1",price);
+					c.model.addRow(in);
 				}
 			});
 

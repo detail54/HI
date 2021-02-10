@@ -6,17 +6,20 @@ import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Set;
 
-class Worker {
-	private String name;
+import Collection_Framework.arraylist3;
+
+class HIHI {
+
 	private String num;
+	private String name;
 	private String bo;
 	private String jo;
 	private String bu;
 
+	static ArrayList<String> ary = new ArrayList<>();
 	static HashMap<String, ArrayList<String>> h = new HashMap<>();
-	static ArrayList<String> ary = new ArrayList<String>();
 
-	Worker(String a, String b, String c, String d, String e) {
+	HIHI(String a, String b, String c, String d, String e) {
 		num = a;
 		name = b;
 		bo = c;
@@ -48,46 +51,43 @@ class Worker {
 		System.out.print("생일: ");
 		String e = sc.next();
 
-		new Worker(a, b, c, d, e);
-
+		new HIHI(a, b, c, d, e);
 	}
 
 	static void getter() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("검색하고자 하는 사원의 사번은?");
-		String in = sc.next();
 
-		Set<String> keys = h.keySet();
-		Iterator<String> it = keys.iterator();
+		System.out.print("검색할 사번: ");
+		String cho = sc.next();
 
-		String re = String.valueOf(h.get(in)).substring(1,String.valueOf(h.get(in)).length()-1);
+		String re = String.valueOf(h.get(cho));
+		re.substring(1, re.length() - 1);
 		re.replace(" ", "");
 		String[] out = re.split(",");
 
-		System.out.println("이름:" + out[0]);
-		System.out.println("부서:" + out[1]);
-		System.out.println("주소:" + out[2]);
-		System.out.println("생일:" + out[3]);
+		System.out.println("이름: " + out[0]);
+		System.out.println("부서: " + out[1]);
+		System.out.println("주소: " + out[2]);
+		System.out.println("생일: " + out[3]);
 
 	}
 }
 
-public class test8 {
+public class test7 {
 
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+
 		while (true) {
 			System.out.println("1.사원정보입력\n2.사원정보 개별조회\n3.프로그램 종료");
-			int in = sc.nextInt();
-			switch (in) {
+			int cho = sc.nextInt();
+			switch (cho) {
 			case 1:
-				Worker.setter();
-				sc.nextLine();
+				HIHI.setter();
 				break;
 			case 2:
-				Worker.getter();
-				sc.nextLine();
+				HIHI.getter();
 				break;
 			case 3:
 				System.out.println("종료");
