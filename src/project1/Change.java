@@ -155,7 +155,6 @@ public class Change extends JFrame {
 		} else if (a.equals("   TV")) {
 			getContentPane().remove(1);
 			tv = new Tv();
-			tv.tv();
 			getContentPane().add(tv, BorderLayout.CENTER);
 			revalidate();
 			repaint();
