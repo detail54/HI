@@ -105,20 +105,24 @@ public class Tv extends JPanel {
 
 			itemImgLabel[i].addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					c.model.addRow(new Object[] { itemName[n], "1", price });
-
-//					int si = 0;
-//					while (true) { // 테이블 행 수만큼 반복해서 상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가,있으면 얻어온 값에 +1
-//									// if(c.buyItemTable.getValueAt(n, 0).equals(itemName[n])) 
-//						if (c.model.getValueAt(si, 0) == null) {
-//							c.model.addRow(new Object[] { itemName[n], "1", price });
-//						} else if (c.model.getValueAt(si, 0).equals(itemName[n])) {
-//							int plus = Integer.parseInt((String) c.model.getValueAt(si, 1) + 1);
-//							c.model.setValueAt(String.valueOf(plus), si, 1);
-//						} else if(c.model.getValueAt(si, 0) != null && !(c.model.getValueAt(si, 0).equals(itemName[n]))){
-//							si++;
-//						}
-//					}
+					//c.model.addRow(new Object[] { itemName[n], "1", price });
+					int si = 0;
+					//System.out.println(c.model.getValueAt(si, 0));
+					
+					while (true) { // 테이블 행 수만큼 반복해서 상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가,있으면 얻어온 값에 +1
+									// if(c.buyItemTable.getValueAt(n, 0).equals(itemName[n])) 
+						if (!(c.model.getValueAt(si, 0).equals(itemName[n]))) {
+							c.model.addRow(new Object[] { itemName[n], "1", price });
+							break;
+						} 
+						else if (c.model.getValueAt(si, 0).equals(itemName[n])) {
+							int plus = Integer.parseInt((String) c.model.getValueAt(si, 1) + 1);
+							c.model.setValueAt(String.valueOf(plus), si, 1);
+							break;
+						} else if(c.model.getValueAt(si, 0) != null && !(c.model.getValueAt(si, 0).equals(itemName[n]))){
+							si++;
+						}
+					}
 				}
 			});
 
@@ -126,4 +130,3 @@ public class Tv extends JPanel {
 
 	}
 }
-//c.model.addRow(new Object[] { itemName[n], "1", price });
