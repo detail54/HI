@@ -48,9 +48,9 @@ public class Tv extends JPanel {
 		String[] itemPrice = { "정상가 295,000원", "정상가 2,140,000원", "정상가 208,900원", "정상가 430,000원", "정상가 219,000원",
 				"정상가 2,990,000원" };// 정상가격
 
-		int[] salePrice = { (int) (Math.random() * 295000) + 100000, (int) (Math.random() * 2140000) + 100000,
-				(int) (Math.random() * 208900) + 50000, (int) (Math.random() * 430000) + 100000,
-				(int) (Math.random() * 219000) + 30000, (int) (Math.random() * 2990000) + 100000 }; // 할인가격
+		int[] salePrice = { (int) (Math.random() * 195000) + 100000, (int) (Math.random() * 2040000) + 100000,
+				(int) (Math.random() * 158900) + 50000, (int) (Math.random() * 330000) + 100000,
+				(int) (Math.random() * 189000) + 30000, (int) (Math.random() * 2890000) + 100000 }; // 할인가격
 
 		for (int i = 0; i < itemLabel.length; i++) {
 			int n = i; // 액션리스너 인덱스값
@@ -132,7 +132,12 @@ public class Tv extends JPanel {
 							}
 						}
 					}
-					System.out.println(c.model.getRowCount());
+					Integer total = 0;
+					for (int j = 0; j < c.model.getRowCount(); j++) {
+						total += Integer.parseInt(((String) c.model.getValueAt(j, 2)).replaceAll(",", ""));
+					}
+					String totalset = String.format("%,d",total);
+					c.totalPrice.setText("결제금액: "+totalset+" 원");
 				}
 			});
 

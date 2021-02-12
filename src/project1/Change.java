@@ -7,6 +7,8 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -45,6 +47,7 @@ public class Change extends JFrame {
 	public String in1;
 	public String in2;
 	public String in3;
+	public static JLabel totalPrice;
 
 	public void change() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,14 +74,40 @@ public class Change extends JFrame {
 		minibasket_in.setBackground(Color.white);
 		minibasket.add(minibasket_in);
 
-		buyItemTable.setShowHorizontalLines(false); //가로 선 제거
-		buyItemTable.setShowVerticalLines(false); //세로 선 제거
+		buyItemTable.setShowHorizontalLines(false); // 가로 선 제거
+		buyItemTable.setShowVerticalLines(false); // 세로 선 제거
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
 		minibasket_in.add(js);
-		//model.addRow(new Object[] {" "," "," "});
-
-		// JLabel totalPrice = new JLabel("결제금액: ");
+		// model.addRow(new Object[] {" "," "," "});
+		
+		totalPrice = new JLabel("결제금액: ");	//총 결제금액 확인
+		totalPrice.setPreferredSize(new Dimension(250, 20));
+		totalPrice.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
+		minibasket_in.add(totalPrice);
+		
+		JButton rowremove = new JButton("삭제");
+		rowremove.setPreferredSize(new Dimension(265, 20));
+		rowremove.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
+		rowremove.setForeground(Color.white);
+		rowremove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		rowremove.setOpaque(true);
+		rowremove.setBackground(Color.black);
+		minibasket_in.add(rowremove);
+		
+		rowremove.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				int select = buyItemTable.getSelectedRow();
+				model.removeRow(select);
+				
+				Integer total = 0;	//삭제 후 결제금액 갱신.
+				for (int j = 0; j < model.getRowCount(); j++) {
+					total += Integer.parseInt(((String) model.getValueAt(j, 2)).replaceAll(",", ""));
+				}
+				String totalset = String.format("%,d",total);
+				totalPrice.setText("결제금액: "+totalset+" 원");
+			}
+		});
 
 		JButton basketButton = new JButton("장바구니");
 		basketButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
