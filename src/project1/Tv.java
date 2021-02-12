@@ -112,19 +112,19 @@ public class Tv extends JPanel {
 					if (c.model.getRowCount() == 0) {
 						c.model.addRow(new Object[] { itemName[n], "1", price });
 					} else if (c.model.getRowCount() >= 1) {
-						int i = 0;
-						String ob = (String) c.model.getValueAt(i, 0);
+						int k = 0;
+						String ob = (String) c.model.getValueAt(k, 0);
 						while (true) {
 							if (ob.equals(itemName[n])) {
-								String set = String.valueOf(Integer.parseInt((String) c.model.getValueAt(i, 1)) + 1);
-								Integer sale = Integer.parseInt(((String) c.model.getValueAt(i, 2)).replaceAll(",", ""));
+								String set = String.valueOf(Integer.parseInt((String) c.model.getValueAt(k, 1)) + 1);
+								Integer sale = Integer.parseInt(((String) c.model.getValueAt(k, 2)).replaceAll(",", ""));
 								String priceset = String.format("%,d", (sale + salePrice[n]));
-								c.model.setValueAt(set, i, 1);
-								c.model.setValueAt(priceset, i, 2);
+								c.model.setValueAt(set, k, 1);
+								c.model.setValueAt(priceset, k, 2);
 								break;
 							} else {
-								if(i != c.model.getRowCount()) {
-									i++;
+								if(k != c.model.getRowCount()) {
+									k++;
 								} else {
 									c.model.addRow(new Object[] { itemName[n], "1", price });
 									break;
