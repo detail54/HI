@@ -130,7 +130,6 @@ public class Tv extends JPanel {
 									break;
 								}
 							}
-
 						}
 					}
 					System.out.println(c.model.getRowCount());
