@@ -76,6 +76,7 @@ public class Change extends JFrame {
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
 		minibasket_in.add(js);
+		//model.addRow(new Object[] {" "," "," "});
 
 		// JLabel totalPrice = new JLabel("결제금액: ");
 
