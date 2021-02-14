@@ -133,15 +133,15 @@ public class Tv extends JPanel {
 						}
 					}
 					Integer total = 0;
+					 
 					for (int j = 0; j < c.model.getRowCount(); j++) {
 						total += Integer.parseInt(((String) c.model.getValueAt(j, 2)).replaceAll(",", ""));
 					}
+					
 					String totalset = String.format("%,d",total);
 					c.totalPrice.setText("결제금액: "+totalset+" 원");
 				}
 			});
-
 		}
-
 	}
 }
