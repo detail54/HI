@@ -13,14 +13,25 @@ public class Main extends JPanel {
 	Main() {
 		this.setBackground(Color.black);
 		
+		JLabel center = new JLabel("Up to 80%");
+		JLabel center2 = new JLabel("SLAE");
 		
-		JLabel center = new JLabel("»óÇ°¸®½ºÆ® ÀÚ¸®");
-		center.setPreferredSize(new Dimension(680,580));
-		center.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
-		center.setBorder(BorderFactory.createLineBorder(Color.black, 1, true));
+		center.setPreferredSize(new Dimension(680,290));
+		center.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 140));
+		center.setForeground(Color.white);
 		center.setOpaque(true);
-		center.setBackground(Color.white);
+		center.setBackground(Color.black);
+		
 		add(center);
+		
+		center2.setPreferredSize(new Dimension(680,290));
+		center2.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 170));
+		center2.setForeground(Color.white);
+		center2.setOpaque(true);
+		center2.setBackground(Color.black);
+		center2.setHorizontalAlignment(center2.CENTER);
+		
+		add(center2);
 		
 		
 	}

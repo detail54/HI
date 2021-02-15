@@ -19,6 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -87,7 +88,7 @@ public class Change extends JFrame {
 		minibasket_in.add(totalPrice);
 		
 		JButton rowremove = new JButton("삭제");
-		rowremove.setPreferredSize(new Dimension(265, 20));
+		rowremove.setPreferredSize(new Dimension(265, 25));
 		rowremove.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
 		rowremove.setForeground(Color.white);
 		rowremove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -97,6 +98,8 @@ public class Change extends JFrame {
 		
 		rowremove.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
+				try {
+					
 				int select = buyItemTable.getSelectedRow();
 				model.removeRow(select);
 				
@@ -106,6 +109,10 @@ public class Change extends JFrame {
 				}
 				String totalset = String.format("%,d",total);
 				totalPrice.setText("결제금액: "+totalset+" 원");
+				
+				} catch (Exception ex) {
+					JOptionPane.showMessageDialog(null, "삭제할 상품을 먼저 선택해주세요","error",JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 

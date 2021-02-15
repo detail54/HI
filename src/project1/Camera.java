@@ -128,6 +128,7 @@ public class Camera extends JPanel{
 							}
 						}
 					}
+					//총 결제금액 표기
 					Integer total = 0;
 					 
 					for (int j = 0; j < c.model.getRowCount(); j++) {
