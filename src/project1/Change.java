@@ -212,6 +212,12 @@ public class Change extends JFrame {
 			getContentPane().add(re, BorderLayout.CENTER);
 			revalidate();
 			repaint();
+		} else if (a.equals("핸드폰")) {
+			getContentPane().remove(1);
+			cell = new Cellphone();
+			getContentPane().add(cell, BorderLayout.CENTER);
+			revalidate();
+			repaint();
 		} else if (a.equals("장바구니")) {
 			getContentPane().remove(1);
 			ba = new Basket();

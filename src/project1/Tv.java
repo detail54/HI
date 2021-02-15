@@ -100,10 +100,6 @@ public class Tv extends JPanel {
 			saleLabel[i].setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
 			itemLabel[i].add(saleLabel[i]);
 
-			// j < Integer.parseInt((String)c.buyItemTable.getValueAt(j, 1));
-
-			// c.model.addRow(new Object[] { " "," "," " });
-
 			// 테이블 행 수만큼 반복해서 상품명에 일치하는게 있는지 확인해서 없으면 수량 1추가,있으면 얻어온 값에 +1
 
 			itemImgLabel[i].addMouseListener(new MouseAdapter() {
@@ -112,7 +108,6 @@ public class Tv extends JPanel {
 					if (c.model.getRowCount() == 0) {
 						c.model.addRow(new Object[] { itemName[n], "1", price });
 					} else if (c.model.getRowCount() >= 1) {
-						//int k = 0;
 						
 						for(int j = 0; j < c.model.getRowCount(); j++) {
 							String ob = (String) c.model.getValueAt(j, 0);
