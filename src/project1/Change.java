@@ -25,7 +25,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-
 //화면 전환 구현.
 
 public class Change extends JFrame {
@@ -81,12 +80,12 @@ public class Change extends JFrame {
 		js.setPreferredSize(new Dimension(280, 378));
 		minibasket_in.add(js);
 		// model.addRow(new Object[] {" "," "," "});
-		
-		totalPrice = new JLabel("결제금액: ");	//총 결제금액 확인
+
+		totalPrice = new JLabel("결제금액: "); // 총 결제금액 확인
 		totalPrice.setPreferredSize(new Dimension(250, 20));
 		totalPrice.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
 		minibasket_in.add(totalPrice);
-		
+
 		JButton rowremove = new JButton("삭제");
 		rowremove.setPreferredSize(new Dimension(265, 25));
 		rowremove.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
@@ -95,23 +94,23 @@ public class Change extends JFrame {
 		rowremove.setOpaque(true);
 		rowremove.setBackground(Color.black);
 		minibasket_in.add(rowremove);
-		
+
 		rowremove.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					
-				int select = buyItemTable.getSelectedRow();
-				model.removeRow(select);
-				
-				Integer total = 0;	//삭제 후 결제금액 갱신.
-				for (int j = 0; j < model.getRowCount(); j++) {
-					total += Integer.parseInt(((String) model.getValueAt(j, 2)).replaceAll(",", ""));
-				}
-				String totalset = String.format("%,d",total);
-				totalPrice.setText("결제금액: "+totalset+" 원");
-				
+
+					int select = buyItemTable.getSelectedRow();
+					model.removeRow(select);
+
+					Integer total = 0; // 삭제 후 결제금액 갱신.
+					for (int j = 0; j < model.getRowCount(); j++) {
+						total += Integer.parseInt(((String) model.getValueAt(j, 2)).replaceAll(",", ""));
+					}
+					String totalset = String.format("%,d", total);
+					totalPrice.setText("결제금액: " + totalset + " 원");
+
 				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(null, "삭제할 상품을 먼저 선택해주세요","error",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "삭제할 상품을 먼저 선택해주세요", "error", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -159,24 +158,16 @@ public class Change extends JFrame {
 			menu_bar.add(jmenu[i]);
 
 			String val = menuName[i];
-			if (i == 9) {
-				jmenu[i].addMouseListener(new MouseAdapter() {
-					public void mouseClicked(MouseEvent e) {
-						setVisible(false);
-						Home h = new Home();
-						h.setVisible(true);
-					}
-				});
-			} else {
-				jmenu[i].addMouseListener(new MouseAdapter() {
-					public void mouseClicked(MouseEvent e) {
-						change(val);
-					}
-				});
-			}
+
+			jmenu[i].addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e) {
+					change(val);
+				}
+			});
+
 		}
 		setVisible(true);
-		// setResizable(false);
+		setResizable(false);
 
 	}
 
@@ -226,17 +217,13 @@ public class Change extends JFrame {
 			revalidate();
 			repaint();
 		} else if (a.equals("장바구니")) {
-			getContentPane().remove(1);
 			ba = new Basket();
-			getContentPane().add(ba, BorderLayout.CENTER);
-			revalidate();
-			repaint();
 		} else if (a.equals("   결제")) {
-			getContentPane().remove(1);
 			pay = new Payment();
-			getContentPane().add(pay, BorderLayout.CENTER);
-			revalidate();
-			repaint();
+		} else if (a.equals("Log-Out")) {
+			setVisible(false);
+			Home h = new Home();
+			h.setVisible(true);
 		}
 	}
 
