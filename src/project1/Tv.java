@@ -112,9 +112,28 @@ public class Tv extends JPanel {
 					if (c.model.getRowCount() == 0) {
 						c.model.addRow(new Object[] { itemName[n], "1", price });
 					} else if (c.model.getRowCount() >= 1) {
-						int k = 0;
-						String ob = (String) c.model.getValueAt(k, 0);
-						while (true) {
+						//int k = 0;
+						
+						for(int j = 0; j < c.model.getRowCount(); j++) {
+							String ob = (String) c.model.getValueAt(j, 0);
+							
+							if (!(ob.equals(itemName[n]))) {
+								if((j + 1) == c.model.getRowCount()) {
+									c.model.addRow(new Object[] { itemName[n], "1", price });
+									break;
+								} else {
+									continue;
+								}
+							} else {
+								String set = String.valueOf(Integer.parseInt((String) c.model.getValueAt(j, 1)) + 1);
+								Integer sale = Integer.parseInt(((String) c.model.getValueAt(j, 2)).replaceAll(",", ""));
+								String priceset = String.format("%,d", (sale + salePrice[n]));
+								c.model.setValueAt(set, j, 1);
+								c.model.setValueAt(priceset, j, 2);
+								break;
+							}
+						}
+						/*while (true) {
 							if (ob.equals(itemName[n])) {
 								String set = String.valueOf(Integer.parseInt((String) c.model.getValueAt(k, 1)) + 1);
 								Integer sale = Integer.parseInt(((String) c.model.getValueAt(k, 2)).replaceAll(",", ""));
@@ -123,14 +142,14 @@ public class Tv extends JPanel {
 								c.model.setValueAt(priceset, k, 2);
 								break;
 							} else {
-								if(k != c.model.getRowCount()) {
+								if(!(k == c.model.getRowCount())) {
 									k++;
 								} else {
 									c.model.addRow(new Object[] { itemName[n], "1", price });
 									break;
 								}
 							}
-						}
+						}*/
 					}
 					Integer total = 0;
 					 
