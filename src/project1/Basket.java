@@ -133,9 +133,7 @@ public class Basket extends JFrame {
 		paybutton.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {	//장바구니 창에서 삭제한 데이터 있을경우, 구매버튼 누를시 메인화면에도 초기화.
-				
-				
+			public void actionPerformed(ActionEvent e) {	
 				
 				setVisible(false);
 				Payment pay = new Payment();
