@@ -44,7 +44,7 @@ public class Camera extends JPanel{
 				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera5.png"),
 				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera6.png") };
 
-		String[] itemName = { "Camera1", "Camera2", "Camera3", "Camera4", "Camera5", "Camera6" }; // 상품명
+		String[] itemName = { "camera1", "camera2", "camera3", "camera4", "camera5", "camera6" }; // 상품명
 		String[] itemPrice = { "정상가 3,150,000원", "정상가 679,000원", "정상가 2,299,000원", "정상가 12,400,000원", "정상가 3,126,000원",
 				"정상가 3,392,500원" };// 정상가격
 

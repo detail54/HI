@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -76,10 +75,11 @@ public class Change extends JFrame {
 
 		buyItemTable.setShowHorizontalLines(false); // 가로 선 제거
 		buyItemTable.setShowVerticalLines(false); // 세로 선 제거
+		buyItemTable.setFont(new Font("나눔고딕 보통", Font.BOLD, 15));
+		buyItemTable.setRowHeight(25);
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
 		minibasket_in.add(js);
-		// model.addRow(new Object[] {" "," "," "});
 
 		totalPrice = new JLabel("결제금액: "); // 총 결제금액 확인
 		totalPrice.setPreferredSize(new Dimension(250, 20));
@@ -123,6 +123,14 @@ public class Change extends JFrame {
 		basketButton.setOpaque(true);
 		basketButton.setBackground(Color.black);
 
+		basketButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ba = new Basket();
+			}
+		});
+		
 		JButton payButton = new JButton("구매");
 		payButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		payButton.setFont(new Font("나눔고딕 보통", Font.BOLD, 23));
@@ -130,6 +138,14 @@ public class Change extends JFrame {
 		payButton.setPreferredSize(new Dimension(130, 100));
 		payButton.setOpaque(true);
 		payButton.setBackground(Color.black);
+		
+		payButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				pay = new Payment();
+			}
+		});
 
 		minibasket_in.add(basketButton);
 		minibasket_in.add(payButton);
@@ -192,7 +208,7 @@ public class Change extends JFrame {
 			getContentPane().add(com, BorderLayout.CENTER);
 			revalidate();
 			repaint();
-		} else if (a.equals("카메라")) {
+		} else if (a.equals("카메라")) { 
 			getContentPane().remove(1);
 			ca = new Camera();
 			getContentPane().add(ca, BorderLayout.CENTER);

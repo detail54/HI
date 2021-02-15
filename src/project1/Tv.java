@@ -37,14 +37,14 @@ public class Tv extends JPanel {
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv1.jpg"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv2.jpg"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv3.jpg"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv4.jpg"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv5.jpg"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv6.jpg") };
+		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv1.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv2.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv3.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv4.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv5.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv6.png") };
 
-		String[] itemName = { "Tv1", "Tv2", "Tv3", "Tv4", "Tv5", "Tv6" }; // 상품명
+		String[] itemName = { "tv1", "tv2", "tv3", "tv4", "tv5", "tv6" }; // 상품명
 		String[] itemPrice = { "정상가 295,000원", "정상가 2,140,000원", "정상가 208,900원", "정상가 430,000원", "정상가 219,000원",
 				"정상가 2,990,000원" };// 정상가격
 

@@ -36,14 +36,14 @@ public class Cellphone extends JPanel{
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Phone1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Phone2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Phone3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Phone4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Phone5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Phone6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone1.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone2.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone3.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone4.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone5.png"),
+				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone6.png") };
 
-		String[] itemName = { "Phone1", "Phone2", "Phone3", "Phone4", "Phone5", "Phone6" }; // 상품명
+		String[] itemName = { "phone1", "phone2", "phone3", "phone4", "phone5", "phone6" }; // 상품명
 		String[] itemPrice = { "정상가 539,900원", "정상가 992,000원", "정상가 1,280,700원", "정상가 895,700원", "정상가 1,280,700원",
 				"정상가 510,700원" };// 정상가격
 
