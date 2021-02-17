@@ -23,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
 public class Payment extends JFrame{
 
 	Change ch = new Change();
+	public static DefaultTableModel model;
 	
 	Payment() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -59,7 +60,7 @@ public class Payment extends JFrame{
 
 		String[] buyItemHeader = { "상품", "상품명", "수량", "금액" };
 
-		DefaultTableModel model = new DefaultTableModel(set, buyItemHeader) {
+		model = new DefaultTableModel(set, buyItemHeader) {
 			public Class getColumnClass(int c) { // JTable 0열 디폴트로 생성하여 백그라운드로 넣은 이미지 표기가능하게함.
 				return getValueAt(0, c).getClass();
 			}
@@ -118,7 +119,8 @@ public class Payment extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				new ReceiptCard();
+				setVisible(false);
 			}
 		});
 
