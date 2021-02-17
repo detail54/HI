@@ -15,6 +15,7 @@ public class test2 {
 		for (int i = 0; i < st.length; i++) {
 			t.add(st[i]);
 		}
+		
 		Iterator<String> it = t.iterator();
 		
 		while(it.hasNext()) {
