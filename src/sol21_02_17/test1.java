@@ -1,9 +1,7 @@
 package sol21_02_17;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Scanner;
-import java.util.Set;
 
 public class test1 {
 
