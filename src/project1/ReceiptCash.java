@@ -70,10 +70,8 @@ public class ReceiptCash extends JFrame {
 			price.add((String) ch.model.getValueAt(i, 2));
 		}
 		
-		JLabel top = new JLabel("<html>Black-Market<br>===========================<html>");
+		JLabel top = new JLabel("<html>Black-Market<br>=================================<html>");
 		top.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 20));
-		top.setOpaque(true);
-		top.setBackground(Color.yellow);
 		top.setBounds(0, 550, 420,40);
 		jp.add(top);
 		JLabel top1 = new JLabel(
@@ -84,9 +82,7 @@ public class ReceiptCash extends JFrame {
 		
 		top1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 13));
 		top1.setPreferredSize(new Dimension(420, 50));
-		top1.setOpaque(true);
 		top1.setBounds(0, 590, 410,20);
-		top1.setBackground(Color.red);
 		jp.add(top1);
 		
 		int y = 620;	//yÃà Áõ°¡¿ë º¯¼ö.
@@ -114,20 +110,14 @@ public class ReceiptCash extends JFrame {
 			listprice[i] = new JLabel(price.get(i));
 			
 			listname[i].setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, cc));
-			listname[i].setOpaque(true);
-			listname[i].setBackground(Color.orange);
 			listname[i].setBounds(0, y, 110, h);
 			jp.add(listname[i]);
 			
 			listnum[i].setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, cc));
-			listnum[i].setOpaque(true);
-			listnum[i].setBackground(Color.orange);
 			listnum[i].setBounds(120, y, 80, h);
 			jp.add(listnum[i]);
 			
 			listprice[i].setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, cc));
-			listprice[i].setOpaque(true);
-			listprice[i].setBackground(Color.orange);
 			listprice[i].setBounds(210, y, 140, h);
 			jp.add(listprice[i]);
 			
@@ -139,22 +129,18 @@ public class ReceiptCash extends JFrame {
 		bott.setLayout(null);
 		bott.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
 		bott.setOpaque(true);
-		bott.setBackground(Color.orange);
+		bott.setBackground(Color.white);
 		bott.setBounds(0, 1000, 420,100);
 		jp.add(bott);
 		
-		JLabel b1 = new JLabel("=======================================");
+		JLabel b1 = new JLabel("======================================");
 		b1.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
-		b1.setOpaque(true);
-		b1.setBackground(Color.green);
 		b1.setBounds(0, 0, 405,20);
 		bott.add(b1);
 		
 		//ÀÔ·ÂÇÑ Çö±Ý¿µ¼öÁõ ¹øÈ£
 		b2 = new JLabel();
 		b2.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
-		b2.setOpaque(true);
-		b2.setBackground(Color.green);
 		b2.setBounds(0, 20, 405,25);
 		b2.setHorizontalAlignment(b2.RIGHT);
 		bott.add(b2);
@@ -162,8 +148,6 @@ public class ReceiptCash extends JFrame {
 		//°áÁ¦µÈ ±Ý¾×
 		b3 = new JLabel(ch.totalPrice.getText());
 		b3.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 30));
-		b3.setOpaque(true);
-		b3.setBackground(Color.yellow);
 		b3.setBounds(0, 45, 405,50);
 		b3.setHorizontalAlignment(b3.RIGHT);
 		bott.add(b3);
