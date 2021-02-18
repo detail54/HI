@@ -64,19 +64,25 @@ public class Home extends JFrame {
 		jp2.setLayout(null);
 		jp2.setSize(400, 500);
 		jp2.setBackground(Color.black);
+		
 		ImageIcon im = new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/cart.png");
+		
 		text_id = new JLabel("ID");
 		text_id.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
 		text_id.setForeground(Color.white);
 		text_id.setBounds(70, 380, 30, 30);
+		
 		text_pw = new JLabel("PW");
 		text_pw.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
 		text_pw.setForeground(Color.white);
 		text_pw.setBounds(70, 410, 30, 30);
+		
 		id = new JTextField(20);
 		id.setBounds(120, 382, 200, 25);
+		
 		pw = new JTextField(20);
 		pw.setBounds(120, 412, 200, 25);
+		
 		main_Img = new JLabel(im);
 		main_Img.setBounds(10, 30, 380, 350);
 

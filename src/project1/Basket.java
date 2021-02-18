@@ -76,6 +76,7 @@ public class Basket extends JFrame {
 
 		JScrollPane js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(480, 469));
+		js.getViewport().setBackground(Color.WHITE);
 		itemlist.add(js);
 
 		JLabel totalPrice = new JLabel("결제금액: "); // 총 결제금액 확인
