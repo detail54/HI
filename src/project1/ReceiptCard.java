@@ -61,7 +61,7 @@ public class ReceiptCard extends JFrame {
 		}
 		
 		JLabel list[] = new JLabel[name.size()];
-		
+		//영수증 문구 출력문. 0 일때는 ======== 입력 , 마지막은 ======= 결제한금액, 결제한 카드번호 불러오게, 중간은 내용 불러와서 레이블 한열씩 추가해서 표기.
 		for (int i = 0; i < list.length; i++) {
 			list[i] = new JLabel();
 			list[i].setOpaque(true);
