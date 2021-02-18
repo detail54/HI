@@ -26,6 +26,7 @@ public class Payment extends JFrame{
 	public static DefaultTableModel model;
 	
 	Payment() {
+		setTitle("결제확인");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		Container c = getContentPane();

@@ -25,6 +25,7 @@ public class Basket extends JFrame {
 	Change ch = new Change();
 
 	Basket() {
+		setTitle("장바구니");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		Container c = getContentPane();

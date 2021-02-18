@@ -50,6 +50,7 @@ public class Change extends JFrame {
 	public static JLabel totalPrice;
 
 	public void change() {
+		setTitle("Black-Market");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1000, 680);
 		setLocation(270, 100);
