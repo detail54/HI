@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -79,6 +80,7 @@ public class Change extends JFrame {
 		buyItemTable.setRowHeight(25);
 		js = new JScrollPane(buyItemTable);
 		js.setPreferredSize(new Dimension(280, 378));
+		js.getViewport().setBackground(Color.WHITE);
 		minibasket_in.add(js);
 
 		totalPrice = new JLabel("결제금액: "); // 총 결제금액 확인

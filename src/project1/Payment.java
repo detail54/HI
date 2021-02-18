@@ -103,7 +103,8 @@ public class Payment extends JFrame{
 
 		rowremove.addMouseListener(new MouseAdapter() {	//결제 버튼 누를시 메인창 장바구니 리스트 초기화 + 영수증 출력
 			public void mouseClicked(MouseEvent e) {
-				
+				new ReceiptCash();
+				setVisible(false);
 			}
 		});
 

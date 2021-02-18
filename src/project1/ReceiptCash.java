@@ -12,14 +12,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class ReceiptCard extends JFrame {
+public class ReceiptCash extends JFrame {
 
 	Change ch = new Change();
 	
-	public static JLabel b2;	//입력한 카드번호 표기
+	public static JLabel b2;	//입력한 현금영수증 번호 표기
 	public static JLabel b3;	//결제된 금액 표기
-	ReceiptCard() {
-		setTitle("카드결제");
+	ReceiptCash() {
+		setTitle("현금결제");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		//배경 검은색 설정
@@ -150,7 +150,7 @@ public class ReceiptCard extends JFrame {
 		b1.setBounds(0, 0, 405,20);
 		bott.add(b1);
 		
-		//입력한 카드번호
+		//입력한 현금영수증 번호
 		b2 = new JLabel();
 		b2.setFont(new Font("나눔고딕 보통", Font.BOLD, 18));
 		b2.setOpaque(true);
@@ -175,7 +175,7 @@ public class ReceiptCard extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new ReceiptCard();
+		new ReceiptCash();
 	}
 
 }
