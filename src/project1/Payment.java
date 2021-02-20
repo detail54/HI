@@ -125,7 +125,7 @@ public class Payment extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				String im = JOptionPane.showInputDialog("현금 영수증 번호 입력");
+				String im = JOptionPane.showInputDialog("카드번호 입력");
 				ReceiptCard rc = new ReceiptCard();
 				rc.b2.setText("카드번호 번호: " + im);
 				setVisible(false);
