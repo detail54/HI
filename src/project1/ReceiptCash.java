@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -20,7 +22,17 @@ public class ReceiptCash extends JFrame {
 	public static JLabel b3;	//결제된 금액 표기
 	ReceiptCash() {
 		setTitle("현금결제");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		this.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+
+				for (int i = 0; i < ch.model.getRowCount(); i++) {
+					ch.model.setRowCount(i);
+				}
+				ch.totalPrice.setText("결제금액: ");
+				setVisible(false);
+			}
+		});
 		
 		//배경 검은색 설정
 		Container c = getContentPane();

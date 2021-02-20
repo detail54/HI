@@ -34,6 +34,7 @@ public class Home extends JFrame {
 	Home() {
 		// 화면구성
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Black-Market");
 
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());

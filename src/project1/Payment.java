@@ -20,15 +20,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Payment extends JFrame{
+public class Payment extends JFrame {
 
 	Change ch = new Change();
 	public static DefaultTableModel model;
-	
+
 	Payment() {
 		setTitle("결제확인");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		c.setBackground(Color.black);
@@ -46,13 +45,13 @@ public class Payment extends JFrame{
 			image[i] = new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/" + get + ".png");
 		}
 
-		Object set[][] = new Object[ch.model.getRowCount()][4];		//jtabel 데이터 입력
+		Object set[][] = new Object[ch.model.getRowCount()][4]; // jtabel 데이터 입력
 
 		for (int i = 0; i < ch.model.getRowCount(); i++) {
 			String get1 = (String) ch.model.getValueAt(i, 0);
 			String get2 = (String) ch.model.getValueAt(i, 1);
 			String get3 = (String) ch.model.getValueAt(i, 2);
-			
+
 			set[i][0] = image[i];
 			set[i][1] = get1;
 			set[i][2] = get2;
@@ -103,9 +102,12 @@ public class Payment extends JFrame{
 		rowremove.setBackground(Color.black);
 		c.add(rowremove);
 
-		rowremove.addMouseListener(new MouseAdapter() {	//결제 버튼 누를시 메인창 장바구니 리스트 초기화 + 영수증 출력
+		rowremove.addMouseListener(new MouseAdapter() { // 결제 버튼 누를시 메인창 장바구니 리스트 초기화 + 영수증 출력
 			public void mouseClicked(MouseEvent e) {
-				new ReceiptCash();
+
+				String im = JOptionPane.showInputDialog("현금 영수증 번호 입력");
+				ReceiptCash rc = new ReceiptCash();
+				rc.b2.setText("현금영수증 번호: " + im);
 				setVisible(false);
 			}
 		});
@@ -122,7 +124,10 @@ public class Payment extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new ReceiptCard();
+
+				String im = JOptionPane.showInputDialog("현금 영수증 번호 입력");
+				ReceiptCard rc = new ReceiptCard();
+				rc.b2.setText("카드번호 번호: " + im);
 				setVisible(false);
 			}
 		});
@@ -132,7 +137,7 @@ public class Payment extends JFrame{
 		setVisible(true);
 		setResizable(false);
 	}
-	
+
 	public static void main(String[] args) {
 		new Payment();
 	}
