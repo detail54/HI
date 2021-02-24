@@ -12,20 +12,25 @@ class Solution {
 		for (int i = 0; i < moves.length; i++) {
 			int j = 0;
 			while (true) {
-				if (board[j][moves[i] - 1] == 0) {
-					j++;
-					continue;
-				} else {
-					if (stack.empty() == true) {
-						stack.push(board[j][moves[i] - 1]);
-						board[j][moves[i] - 1] = 0;
-					} else if (stack.peek() == board[j][moves[i] - 1]) {
-						stack.pop();
-						answer += 2;
+				try {
+					if (board[j][moves[i] - 1] == 0) {
+						j++;
+						continue;
 					} else {
-						stack.push(board[j][moves[i] - 1]);
-						board[j][moves[i] - 1] = 0;
+						if (stack.empty() == true) {
+							stack.push(board[j][moves[i] - 1]);
+							board[j][moves[i] - 1] = 0;
+						} else if (stack.peek() == board[j][moves[i] - 1]) {
+							board[j][moves[i] - 1] = 0;
+							stack.pop();
+							answer += 2;
+						} else {
+							stack.push(board[j][moves[i] - 1]);
+							board[j][moves[i] - 1] = 0;
+						}
+						break;
 					}
+				} catch (ArrayIndexOutOfBoundsException e) {
 					break;
 				}
 			}
