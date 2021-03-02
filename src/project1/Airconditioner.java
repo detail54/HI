@@ -35,12 +35,12 @@ public class Airconditioner extends JPanel{
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/air1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/air2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/air3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/air4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/air5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/air6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("air1.png"),
+				new ImageIcon("air2.png"),
+				new ImageIcon("air3.png"),
+				new ImageIcon("air4.png"),
+				new ImageIcon("air5.png"),
+				new ImageIcon("air6.png") };
 
 		String[] itemName = { "air1", "air2", "air3", "air4", "air5", "air6" }; // 상품명
 		String[] itemPrice = { "정상가 1,750,000원", "정상가 1,450,000원", "정상가 2,330,000원", "정상가 319,000원", "정상가 1,150,000원",

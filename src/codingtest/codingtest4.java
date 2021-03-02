@@ -26,7 +26,7 @@ class Solution1 {
 	}
 }
 
-public class condingtest4 {
+public class codingtest4 {
 
 	public static void main(String[] args) {
 

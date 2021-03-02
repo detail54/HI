@@ -42,7 +42,7 @@ public class Basket extends JFrame {
 
 		for (int i = 0; i < ch.model.getRowCount(); i++) {
 			String get = (String) ch.model.getValueAt(i, 0);
-			image[i] = new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/" + get + ".png");
+			image[i] = new ImageIcon(get + ".png");
 		}
 
 		Object set[][] = new Object[ch.model.getRowCount()][4];		//jtabel 데이터 입력

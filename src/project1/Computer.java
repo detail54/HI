@@ -36,12 +36,12 @@ public class Computer extends JPanel{
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/pc1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/pc2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/pc3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/pc4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/pc5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/pc6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("pc1.png"),
+				new ImageIcon("pc2.png"),
+				new ImageIcon("pc3.png"),
+				new ImageIcon("pc4.png"),
+				new ImageIcon("pc5.png"),
+				new ImageIcon("pc6.png") };
 
 		String[] itemName = { "pc1", "pc2", "pc3", "pc4", "pc5", "pc6" }; // 상품명
 		String[] itemPrice = { "정상가 3,190,000원", "정상가 599,000원", "정상가 857,500원", "정상가 1,174,040원", "정상가 1,590,000원",

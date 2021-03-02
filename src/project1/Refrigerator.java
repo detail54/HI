@@ -35,12 +35,12 @@ public class Refrigerator extends JPanel {
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/r1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/r2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/r3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/r4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/r5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/r6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("r1.png"),
+				new ImageIcon("r2.png"),
+				new ImageIcon("r3.png"),
+				new ImageIcon("r4.png"),
+				new ImageIcon("r5.png"),
+				new ImageIcon("r6.png") };
 
 		String[] itemName = { "r1", "r2", "r3", "r4", "r5", "r6" }; // 상품명
 		String[] itemPrice = { "정상가 630,000원", "정상가 2,850,000원", "정상가 545,000원", "정상가 650,000원", "정상가 1,080,000원",

@@ -37,12 +37,12 @@ public class Camera extends JPanel{
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/Camera6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("Camera1.png"),
+				new ImageIcon("Camera2.png"),
+				new ImageIcon("Camera3.png"),
+				new ImageIcon("Camera4.png"),
+				new ImageIcon("Camera5.png"),
+				new ImageIcon("Camera6.png") };
 
 		String[] itemName = { "camera1", "camera2", "camera3", "camera4", "camera5", "camera6" }; // 상품명
 		String[] itemPrice = { "정상가 3,150,000원", "정상가 679,000원", "정상가 2,299,000원", "정상가 12,400,000원", "정상가 3,126,000원",

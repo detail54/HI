@@ -36,12 +36,12 @@ public class Cellphone extends JPanel{
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/phone6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("phone1.png"),
+				new ImageIcon("phone2.png"),
+				new ImageIcon("phone3.png"),
+				new ImageIcon("phone4.png"),
+				new ImageIcon("phone5.png"),
+				new ImageIcon("phone6.png") };
 
 		String[] itemName = { "phone1", "phone2", "phone3", "phone4", "phone5", "phone6" }; // 상품명
 		String[] itemPrice = { "정상가 539,900원", "정상가 992,000원", "정상가 1,280,700원", "정상가 895,700원", "정상가 1,280,700원",

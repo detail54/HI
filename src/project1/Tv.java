@@ -37,12 +37,12 @@ public class Tv extends JPanel {
 		center.setBackground(Color.white);
 		center.setLayout(new GridLayout(2, 3));
 		add(center);
-		ImageIcon[] itemImg = { new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv1.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv2.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv3.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv4.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv5.png"),
-				new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/tv6.png") };
+		ImageIcon[] itemImg = { new ImageIcon("tv1.png"),
+				new ImageIcon("tv2.png"),
+				new ImageIcon("tv3.png"),
+				new ImageIcon("tv4.png"),
+				new ImageIcon("tv5.png"),
+				new ImageIcon("tv6.png") };
 
 		String[] itemName = { "tv1", "tv2", "tv3", "tv4", "tv5", "tv6" }; // 상품명
 		String[] itemPrice = { "정상가 295,000원", "정상가 2,140,000원", "정상가 208,900원", "정상가 430,000원", "정상가 219,000원",
@@ -128,23 +128,6 @@ public class Tv extends JPanel {
 								break;
 							}
 						}
-						/*while (true) {
-							if (ob.equals(itemName[n])) {
-								String set = String.valueOf(Integer.parseInt((String) c.model.getValueAt(k, 1)) + 1);
-								Integer sale = Integer.parseInt(((String) c.model.getValueAt(k, 2)).replaceAll(",", ""));
-								String priceset = String.format("%,d", (sale + salePrice[n]));
-								c.model.setValueAt(set, k, 1);
-								c.model.setValueAt(priceset, k, 2);
-								break;
-							} else {
-								if(!(k == c.model.getRowCount())) {
-									k++;
-								} else {
-									c.model.addRow(new Object[] { itemName[n], "1", price });
-									break;
-								}
-							}
-						}*/
 					}
 					Integer total = 0;
 					 

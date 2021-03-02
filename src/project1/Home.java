@@ -66,7 +66,7 @@ public class Home extends JFrame {
 		jp2.setSize(400, 500);
 		jp2.setBackground(Color.black);
 		
-		ImageIcon im = new ImageIcon("C:/Users/82109/eclipse-workspace/HI/src/project1/Img/cart.png");
+		ImageIcon im = new ImageIcon("cart.png");
 		
 		text_id = new JLabel("ID");
 		text_id.setFont(new Font("³ª´®°íµñ º¸Åë", Font.BOLD, 18));
