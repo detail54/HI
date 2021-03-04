@@ -28,7 +28,7 @@ public class dbtest1_1 {
 			System.out.println(n>0?"성공":"실패");
 
 		} catch (Exception e) {
-
+			System.out.println(e.getMessage());
 		}
 
 	}
