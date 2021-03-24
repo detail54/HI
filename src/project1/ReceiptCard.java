@@ -56,7 +56,7 @@ public class ReceiptCard extends JFrame {
 		class Th extends Thread {
 
 			int y = 600;
-
+			
 			public void run() {
 				for (int i = 0; i < 110; i++) {
 					y = y - 10;

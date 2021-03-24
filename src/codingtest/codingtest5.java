@@ -1,45 +1,31 @@
 package codingtest;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 class Solution2 {
 	public String solution(String[] participant, String[] completion) {
 
+		String answer = "";
 
-		/*ArrayList<String> aa = new ArrayList<>();
+		Arrays.sort(participant);
+		Arrays.sort(completion);
 
-		for (int i = 0; i < participant.length; i++) {
-			aa.add(participant[i]);
-		}
 		for (int i = 0; i < completion.length; i++) {
-			for (int j = 0; j < aa.size(); j++) {
-				if(aa.get(j).equals(completion[i])) {
-					aa.remove(j);
+			if (completion[i].equals(participant[i])) {
+				continue;
+			} else {
+				if (i + 1 == completion.length) {
+					answer = participant[participant.length - 1];
+					break;
+				} else {
+					answer = participant[i];
 					break;
 				}
+
 			}
 		}
 
-		String answer = aa.get(0);
 		System.out.println(answer);
-		return answer;
-	}
-}*/
-
-		ArrayList<String> aa = new ArrayList<>();
-		ArrayList<String> bb = new ArrayList<>();
-
-		for (int i = 0; i < participant.length; i++) {
-			aa.add(participant[i]);
-		}
-		for (int i = 0; i < completion.length; i++) {
-			bb.add(completion[i]);
-		}
-		
-		aa.removeAll(bb);
-		
-		String answer = aa.get(0);
-		System.out.println(aa);
 		return answer;
 
 	}

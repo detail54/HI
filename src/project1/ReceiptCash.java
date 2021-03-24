@@ -20,6 +20,7 @@ public class ReceiptCash extends JFrame {
 	
 	public static JLabel b2;	//입력한 현금영수증 번호 표기
 	public static JLabel b3;	//결제된 금액 표기
+	
 	ReceiptCash() {
 		setTitle("현금결제");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
